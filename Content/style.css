@@ -571,6 +571,7 @@ input:focus, textarea:focus {
   font-weight: bold;
 }
 
+/* FORMULARIOS */
 .formulario, .formulario_form_column, .formulario_form_row {display: flex;}
 
 .formulario {
@@ -606,6 +607,54 @@ input:focus, textarea:focus {
   width: 270px;
 }
 
+/* SOBRE */
+.titles_sobre {
+  background-image: url('assets/ferreira-gg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 80px;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.titles_sobre h3 {
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: var(--cor-principal);
+}
+
+.titles_sobre hr {
+  width: 80px;
+  margin: 0 auto;
+  height: 2px !important;
+  color: var(--cor-branco-absoluto);
+}
+
+.cttsobredesc {
+  display: flex;
+  justify-content: center;
+}
+
+.sobre_descriptions {
+  padding: 0 150px;
+  text-align: justify;
+}
+
+.sobre_descriptions a {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.sitens {
+  padding: 0;
+  list-style: none;
+}
+
+.unfalse {
+  width: 40px;
+}
+
 /* FOOTER */
 .footer {
   width: 100%;
@@ -633,53 +682,63 @@ input:focus, textarea:focus {
 }
 
 /* RESPONSIVE PARA MOBILES */
-@media (max-width: 750px)
+@media (max-width: 860px)
 {
   .section_content {
     background-image: url('assets/ferreira-md.png');
     background-attachment: scroll;
     background-position: 0px -30px;
   }
-
+  
   .navbar_off_context {
     padding: 20px 30px;
     align-items: unset;
     flex-direction: column;
   }
-
+  
   .navbar_ul {
     padding: 0 8px;
     flex-direction: column;
   }
-
+  
   .navbar_ul_li {
     margin: unset;
     font-weight: bold;
     padding: 10px 0 0 0;
   }
-
+  
   #liu {
     padding: 10px 0 0 0;
   }
-
+  
   .navbar_ul_li_fechado {
     margin: 0 0 -24px;
     transition: .5s ease-out;
   }
-
+  
   .navbar_ul_li_fechado a { 
     color: var(--cor-principal);
   }
-
+  
   .navbar_ul_li_fechado {
     padding: 0;
   }
-
+  
   .btnMenu, .btnMenu.fas.fa-bars {
     border: none;
     display: block;
     font-size: 40px;
     background: var(--cor-principal);
+  }
+  
+  .titles_sobre {
+    background-image: url('assets/ferreira-md.png');
+    background-attachment: fixed;
+    background-position: 0px -266px;
+  }
+  
+  .sobre_descriptions {
+    padding: 0 20px;
   }
 
   .footer_copyright {

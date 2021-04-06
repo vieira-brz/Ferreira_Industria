@@ -105,6 +105,6 @@ if ($_SESSION['acesso'] != 'Master')
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="../Scripts/menu.js"></script>
+    <script src="../../Scripts/menu.js"></script>
 </body>
 </html>
