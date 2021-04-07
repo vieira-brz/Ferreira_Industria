@@ -106,5 +106,6 @@ if ($_SESSION['acesso'] != 'Master')
 
     <!-- SCRIPTS -->
     <script src="../../Scripts/menu.js"></script>
+    <script src="../../Scripts/info.js"></script>
 </body>
 </html>

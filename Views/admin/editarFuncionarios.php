@@ -1,6 +1,13 @@
 <?php
-include '../../Models/Mysql.php';
+session_start();
 include '../../Config/database.php';
+include '../../Controllers/php/allUsers.php';
+
+if (empty($_SESSION['logado'])) 
+{ header('Location: ../../index.php'); }
+
+if ($_SESSION['acesso'] != 'Master') 
+{ header('Location: ../inicial.php'); }
 
 $value = $_POST['IDED'];
 
@@ -98,6 +105,7 @@ echo
 
     <!-- SCRIPTS -->
     <script src="../../Scripts/menu.js"></script>
+    <script src="../../Scripts/info.js"></script>
 </body>
 </html>
 '; 

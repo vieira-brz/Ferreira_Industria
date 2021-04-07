@@ -4,3 +4,4 @@ $('#pckey').focusout(()=>{
 
 $('.afo').css('display', 'flex').fadeOut(4000);
 
+$('.alert').css('display', 'block').fadeOut(4000);

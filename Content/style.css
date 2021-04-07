@@ -566,6 +566,10 @@ input:focus, textarea:focus {
   width: 270px;
 }
 
+.alert {
+  display: none;
+}
+
 /* SOBRE */
 .titles_sobre {
   background-image: url('assets/ferreira-gg.png');
