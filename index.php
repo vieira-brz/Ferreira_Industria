@@ -70,5 +70,7 @@
             </div>
         </div>
     </div>
+
+    <script src="Scripts/info.js"></script>
 </body>
 </html>

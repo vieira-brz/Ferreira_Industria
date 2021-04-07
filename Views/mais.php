@@ -1,7 +1,7 @@
 <?php $titulo = "FERREIRA | MAIS"; include_once 'layout/header.php'; ?>
 
     <main class="content">
-        <label>
+        <!-- <label>
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             mudar nome
         </label>
@@ -19,7 +19,7 @@
         <label>
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             mostrar acesso
-        </label>
+        </label> -->
     </main>
 
 <?php include_once 'layout/footer.php'; ?>

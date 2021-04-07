@@ -15,6 +15,7 @@ if (isset($email) && !empty($email) && isset($senha) && !empty($senha))
 
     if (count($dados) == 1) 
     {
+        $_SESSION['nome'] = $dados[0]['NOME'];
         $_SESSION['acesso'] = $dados[0]['ACESSO'];
         $_SESSION['logado'] = true;
 
