@@ -9,7 +9,7 @@ $query = "SELECT * FROM ".$db.".".$tabela2;
 $dados = $dbf->readQuery($query);
 
 setlocale(LC_TIME, 'Portuguese_Brazil');
-$semana = date("d/m/Y", strtotime("- 14 days"));
+$semana = date("d/m/Y", strtotime("- 365 days"));
 
 $retorno = array();
 

@@ -16,6 +16,12 @@ if (isset($email) && !empty($email) && isset($senha) && !empty($senha))
     if (count($dados) == 1) 
     {
         $_SESSION['nome'] = $dados[0]['NOME'];
+
+        $primeiroNome = explode(" ", $dados[0]['NOME']);
+        $_SESSION['primeiroNome'] = strtoupper($primeiroNome[0]);
+
+        $_SESSION['email'] = $dados[0]['EMAIL'];
+        $_SESSION['senha'] = $dados[0]['SENHA'];
         $_SESSION['acesso'] = $dados[0]['ACESSO'];
         $_SESSION['logado'] = true;
 

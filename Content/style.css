@@ -645,6 +645,13 @@ input:focus, textarea:focus {
 }
 
 /* RESPONSIVE PARA MOBILES */
+@media (max-width: 500px) 
+{
+  .second_section_content {
+    display: none;
+  }
+}
+
 @media (max-width: 860px)
 {
   .section_content {
