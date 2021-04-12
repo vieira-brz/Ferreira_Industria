@@ -1,4 +1,4 @@
-<?php session_start(); if(isset($_SESSION['logado'])):header('Location: Views/inicial.php');endif;?>
+<?php session_start(); if(isset($_SESSION['logado'])):header('Location: Views/inicial.php');endif; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -59,7 +59,7 @@
                                     <label for="remember">Lembrar-me</label>
                                 </div>
 
-                                <a href="#">Esqueceu sua senha?</a>
+                                <a href="Views/relembrar-senha.php">Esqueceu sua senha?</a>
                             </div>
                         
                             <button class="btn btn-primary mb-2" id="button_exceptions">LOGAR</button>

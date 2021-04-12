@@ -58,7 +58,7 @@
                                 <i class="fas fa-user"></i><input type="text" placeholder="Nome completo" name="nome" required>
                                 <i class="fas fa-at"></i><input type="email" placeholder="E-mail" name="email" required>
                                 <i class="fas fa-key"></i><input type="password" placeholder="Senha" name="senha" required>
-                                <i class="fas fa-key"></i><input class="mb-3" type="text" placeholder="Palavra-chave" name="palavra" id="pckey" required>
+                                <i class="fas fa-lock"></i><input class="mb-3" type="text" placeholder="Palavra-chave" name="palavra" id="pckey" required>
                             </div>
 
                             <div class="formulario_form_row justify-content-center mb-3">
