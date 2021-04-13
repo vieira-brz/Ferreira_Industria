@@ -56,6 +56,23 @@ class Usuarios
             header('Location: ../../Views/admin/funcionarios.php');        
         }
     }
+
+    public function alteraSenha($db, $tabela, $senha, $id)
+    {
+        $query = "UPDATE ".$db.".".$tabela." SET SENHA = '".$senha."' WHERE ID = ".$id;
+        $sql = $this->con->alterQuery($query);
+
+        if ($sql == true)
+        {
+            $_SESSION['senha_alterada'] = true;
+            header('Location: ../../Views/relembrar-senha.php');
+        }
+        else 
+        {
+            $_SESSION['senha_nao_alterada'] = true;
+            header('Location: ../../Views/relembrar-senha.php');
+        }
+    }
 }
 
 ?>

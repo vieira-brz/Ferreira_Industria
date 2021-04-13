@@ -364,6 +364,7 @@
     
     --danger: rgb(255, 70, 70);
     --warning: rgb(255, 240, 50);
+    --success: rgb(25, 135, 84);
 }
 
 /* SCROLLBAR */
@@ -438,6 +439,8 @@ input:focus, textarea:focus {
 .alert_danger label { color: var(--cor-branco-absoluto); }
 .alert_warning { background: var(--warning); color: var(--cor-text); }
 .alert_warning label { color: var(--cor-text); }
+.alert_success { background: var(--success); }
+.alert_success label { color: var(--cor-branco-absoluto); }
 
 .navbar_ul_li_a { 
   text-decoration: none;
@@ -618,6 +621,15 @@ input:focus, textarea:focus {
   width: 40px;
 }
 
+i.fas.fa-user-plus, i.fas.fa-edit {
+  cursor: pointer;
+  transition: .3s ease-out;
+  vertical-align: -webkit-baseline-middle;
+}
+
+i.fas.fa-user-plus:hover, i.fas.fa-edit:hover {
+  transform: scale(1.5);
+}
 /* FOOTER */
 .footer {
   width: 100%;

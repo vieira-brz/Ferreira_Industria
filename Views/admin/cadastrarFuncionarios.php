@@ -57,7 +57,7 @@ if ($_SESSION['acesso'] != 'Master')
                 <?php if(isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'Master'): ?>
                     <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
                 <?php endif; ?>
-                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../mais.php">Conta</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../conta.php">Conta</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair.php">Sair</a></li>
             </ul>
         </nav>
@@ -96,13 +96,6 @@ if ($_SESSION['acesso'] != 'Master')
             </div>
         </div>
     </main>
-
-    <footer class="footer">
-        <!-- PRIMEIRA PARTE FOOTER -->
-        <div class="footer_copyright d-flex">
-            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
-        </div>
-    </footer>
 
     <!-- SCRIPTS -->
     <script src="../../Scripts/menu.js"></script>

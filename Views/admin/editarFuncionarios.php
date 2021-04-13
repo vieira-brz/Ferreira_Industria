@@ -63,7 +63,7 @@ echo
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../sobre.php">Sobre</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../contato.php">Contato</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
-                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../mais.php">Conta</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../conta.php">Conta</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair.php">Sair</a></li>
             </ul>
         </nav>
@@ -71,7 +71,7 @@ echo
 
     <main class="content">
         <div class="d-flex justify-content-center mt-4 mb-4">
-            <div class="card shadow p-2" style="width: 25rem;">
+            <div class="card shadow p-2" style="width: 22rem;">
                 <div class="card-body" style="background: var(--cor-principal);">
                     <div class="formulario">
                         <h3 class="mb-1">EDITAR FUNCIONÁRIO</h3>
@@ -95,13 +95,6 @@ echo
             </div>
         </div>
     </main>
-
-    <footer class="footer">
-        <!-- PRIMEIRA PARTE FOOTER -->
-        <div class="footer_copyright d-flex">
-            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
-        </div>
-    </footer>
 
     <!-- SCRIPTS -->
     <script src="../../Scripts/menu.js"></script>

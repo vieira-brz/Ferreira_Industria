@@ -42,6 +42,12 @@
                 <div class="formulario">
                     <h3 class="mb-1">ALTERAR SENHA</h3>
 
+                    <?php if(isset($_SESSION['senha_alterada'])): ?>
+                        <span class="alert_success afo">
+                            <label>Senha alterada</label>
+                        </span> 
+                    <?php endif; unset($_SESSION['senha_alterada']); ?>
+
                     <?php if(isset($_SESSION['wordkey_error'])): ?>
                         <span class="alert_danger afo">
                             <label>Erro: Palavra chave incorreta.</label>
@@ -54,21 +60,23 @@
                         </span> 
                     <?php endif; unset($_SESSION['senha_nao_alterada']); ?>
                     
-                    <form class="formulario_form" action="../Controllers/php/cadastra.php" method="post">
+                    <form action="../Controllers/php/alteraSenha.php" method="post">
                         <div class="formulario_form_column">
+                            <i class="fas fa-at"></i><input type="email" placeholder="E-mail" name="email" required>
                             <i class="fas fa-key"></i><input type="password" placeholder="Senha" name="senha" required>
-                            <i class="fas fa-key"></i><input type="password" placeholder="Confirmar senha" name="confsenha" required>
-                            <i class="fas fa-lock"></i><input class="mb-3" type="text" placeholder="Palavra-chave" name="palavra" id="pckey" required>
+                            <i id="confirm" class="fas fa-key"></i><input type="password" placeholder="Confirmar senha" name="confsenha" required>
+                            <i class="fas fa-lock"></i><input class="mb-3" type="text" placeholder="Palavra-chave" name="palavra" required>
                         </div>
                     
-                        <button class="btn btn-primary mb-2" id="button_exceptions">CADASTRAR</button>
-                        <a href="../index.php" class="btn btn-danger mb-2" id="button_exceptions">VOLTAR</a>
+                        <button class="btn btn-success mb-2 save" id="button_exceptions">SALVAR</button>
+                        <a href="../index.php" class="btn btn-primary mb-2" id="button_exceptions">VOLTAR</a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="../Scripts/alteraSenha.js"></script>
     <script src="../Scripts/info.js"></script>
 </body>
 </html>
