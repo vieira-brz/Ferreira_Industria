@@ -73,6 +73,51 @@ class Usuarios
             header('Location: ../../Views/relembrar-senha.php');
         }
     }
+
+    public function alteraSomenteSenha($db, $tabela, $senha, $email)
+    {
+        $query = "UPDATE ".$db.".".$tabela." SET SENHA = '".$senha."' WHERE EMAIL = '".$email."'";
+        $sql = $this->con->alterQuery($query);
+
+        if ($sql == true)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public function alteraSomenteEmail($db, $tabela, $emailnovo, $email)
+    {
+        $query = "UPDATE ".$db.".".$tabela." SET EMAIL = '".$emailnovo."' WHERE EMAIL = '".$email."'";
+        $sql = $this->con->alterQuery($query);
+
+        if ($sql == true)
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
+
+    public function alteraSomenteNome($db, $tabela, $nome, $email)
+    {
+        $query = "UPDATE ".$db.".".$tabela." SET NOME = '".$nome."' WHERE EMAIL = '".$email."'";
+        $sql = $this->con->alterQuery($query);
+
+        if ($sql == true)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
+    }
 }
 
 ?>

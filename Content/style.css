@@ -621,15 +621,24 @@ input:focus, textarea:focus {
   width: 40px;
 }
 
-i.fas.fa-user-plus, i.fas.fa-edit {
+i.fas.fa-user-plus, i.fas.fa-edit, i.fas.fa-check, i.fas.fa-times {
   cursor: pointer;
   transition: .3s ease-out;
   vertical-align: -webkit-baseline-middle;
 }
 
-i.fas.fa-user-plus:hover, i.fas.fa-edit:hover {
+i.fas.fa-user-plus:hover, i.fas.fa-edit:hover, i.fas.fa-check:hover, i.fas.fa-times:hover {
   transform: scale(1.5);
 }
+
+i.fas.fa-check:hover {
+  color: green;
+}
+
+i.fas.fa-times:hover {
+  color: red;
+}
+
 /* FOOTER */
 .footer {
   width: 100%;
