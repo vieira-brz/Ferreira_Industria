@@ -1,6 +1,6 @@
 <?php $titulo = "FERREIRA | CONTA"; include_once 'layout/header.php'; ?>
     
-    <main class="content" style="padding: 20px;">
+    <main class="content" style="padding: 20px; height: 76vh;">
         <div class="container mt-3">
             <div class="main-body">            
                 <div class="row gutters-sm d-flex justify-content-center">
@@ -65,4 +65,15 @@
         </div>
     </main>
 
+    <footer class="footer">
+        <!-- PRIMEIRA PARTE FOOTER -->
+        <div class="footer_copyright d-flex">
+            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../Scripts/menu.js"></script>
     <script src="../Scripts/info.js"></script>
+</body>
+</html>

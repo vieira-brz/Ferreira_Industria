@@ -69,7 +69,7 @@ echo
         </nav>
     </header>
 
-    <main class="content">
+    <main class="content" style="height: 76vh;">
         <div class="d-flex justify-content-center mt-4 mb-4">
             <div class="card shadow p-2" style="width: 22rem;">
                 <div class="card-body" style="background: var(--cor-principal);">
@@ -96,9 +96,16 @@ echo
         </div>
     </main>
 
+    <footer class="footer">
+        <!-- PRIMEIRA PARTE FOOTER -->
+        <div class="footer_copyright d-flex">
+            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
+        </div>
+    </footer>
+
     <!-- SCRIPTS -->
-    <script src="../../Scripts/menu.js"></script>
-    <script src="../../Scripts/info.js"></script>
+    <script src="../Scripts/menu.js"></script>
+    <script src="../Scripts/info.js"></script>
 </body>
 </html>
 '; 

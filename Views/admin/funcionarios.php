@@ -63,7 +63,7 @@ if ($_SESSION['acesso'] != 'Master')
         </nav>
     </header>
 
-    <main class="content cntt">
+    <main class="content cntt" style="height: 76vh;">
         <?php if (isset($_SESSION['deletado'])): ?>
             <div class="alert alert-success">
                 <label>Deletado com sucesso!</label>
@@ -138,8 +138,15 @@ if ($_SESSION['acesso'] != 'Master')
         </table>
     </main>
 
+    <footer class="footer">
+        <!-- PRIMEIRA PARTE FOOTER -->
+        <div class="footer_copyright d-flex">
+            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
+        </div>
+    </footer>
+
     <!-- SCRIPTS -->
-    <script src="../../Scripts/menu.js"></script>
-    <script src="../../Scripts/info.js"></script>
+    <script src="../Scripts/menu.js"></script>
+    <script src="../Scripts/info.js"></script>
 </body>
 </html>

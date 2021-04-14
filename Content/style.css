@@ -639,6 +639,39 @@ i.fas.fa-times:hover {
   color: red;
 }
 
+/* CARDS CONTATO */
+.ctcards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.cardct {
+  margin: 50px 0;
+  padding: 15px;
+}
+
+.cdbd {
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px 0px !important;
+}
+
+.cdbd i {
+  font-size: 30px;
+  color: var(--cor-branco-absoluto);
+  transition: .5s ease-in-out;
+}
+
+.cdbd i:hover {
+  transform: scale(1.5);
+}
+
+.cdbd i:hover .cardct {
+  box-shadow: 0 0 15px #230aff !important;
+}
+
 /* FOOTER */
 .footer {
   width: 100%;
@@ -653,12 +686,23 @@ i.fas.fa-times:hover {
 }
 
 .footer_infos {
-  text-align: center;
+  /* text-align: center; */
   padding: 10px 50px;
 }
 
 .footer_infos i {
+  cursor: pointer;
   margin: 10px 0;
+  transition: .2s ease-in-out;
+}
+
+.footer_infos i:hover {
+  color: var(--cor-efeito);
+}
+
+.rwmd {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer_infos i label {
@@ -670,6 +714,22 @@ i.fas.fa-times:hover {
 {
   .second_section_content {
     display: none;
+  }
+}
+
+@media (max-width: 660px)
+{
+  .rwmd {
+    display: flex;
+    flex-direction: column;
+    text-align: center !important;
+  }
+  .rwmd i {
+    display: flex;
+    flex-direction: column;
+  }
+  .rwmd i label {
+    padding: 20px 0;
   }
 }
 

@@ -63,7 +63,7 @@ if ($_SESSION['acesso'] != 'Master')
         </nav>
     </header>
 
-    <main class="content cntt d-flex justify-content-center">
+    <main class="content cntt d-flex justify-content-center" style="height: 76vh;">
         <div class="card shadow p-2 mt-3 mb-3" style="width: 20rem;">
             <div class="card-body" style="background: var(--cor-principal);">
                 <div class="formulario">
@@ -97,8 +97,15 @@ if ($_SESSION['acesso'] != 'Master')
         </div>
     </main>
 
+    <footer class="footer">
+        <!-- PRIMEIRA PARTE FOOTER -->
+        <div class="footer_copyright d-flex">
+            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
+        </div>
+    </footer>
+
     <!-- SCRIPTS -->
-    <script src="../../Scripts/menu.js"></script>
-    <script src="../../Scripts/info.js"></script>
+    <script src="../Scripts/menu.js"></script>
+    <script src="../Scripts/info.js"></script>
 </body>
 </html>
