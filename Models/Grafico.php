@@ -1,24 +1,22 @@
 <?php
 
-class Grafico 
+class Grafico
 {
-    private $results;
-
     public function buscaDados($semana, $dados, $retorno)
     {
         foreach ($dados as $key)
         {
-            if (date("d/m/Y", strtotime($key['DATA_REGISTRO'])) > $semana) 
+            if (date("d/m/Y", strtotime($key['data'])) > $semana)
             {
-                $retorno['semanal'][strtoupper(utf8_encode(strftime("%a", strtotime($key['DATA_REGISTRO']))))]
-                ["HORARIO"] = date("H", strtotime($key['DATA_REGISTRO']));
-    
-                $retorno['semanal'][strtoupper(utf8_encode(strftime("%a", strtotime($key['DATA_REGISTRO']))))]
-                ["ENERGIA"] = $key["ENERGIA"];
+                $retorno['semanal'][strtoupper(utf8_encode(strftime("%a", strtotime($key['data']))))]
+                ["HORARIO"] = date("H", strtotime($key['data']));
+
+                $retorno['semanal'][strtoupper(utf8_encode(strftime("%a", strtotime($key['data']))))]
+                ["ENERGIA"] += $key["dado"];
             }
         }
         return $retorno;
-    } 
+    }
 }
 
 ?>

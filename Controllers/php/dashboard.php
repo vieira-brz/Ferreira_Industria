@@ -5,7 +5,7 @@ include '../../Models/Mysql.php';
 include '../../Config/database.php';
 
 $dbf = new Mysql;
-$query = "SELECT * FROM ".$db.".".$tabela2;
+$query = "SELECT * FROM ".$db.".".$tabelanode;
 $dados = $dbf->readQuery($query);
 
 setlocale(LC_TIME, 'Portuguese_Brazil');
