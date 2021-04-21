@@ -3,4 +3,4 @@ A aplicação consiste em monitorar o uso de energia da empresa, para isso os de
 e criaram uma interface visual para melhor visualização dos dados, utilizando dashboards, tabelas e muito mais 
 ferramentas dinâmicas para melhorar o trabalho dos funcionários.
 
-Atualmente o site se encontra em: https://ferreiraquimica1.000webhostapp.com/
+Atualmente o site se encontra em: http://medidorquimicaiot.com.br/
