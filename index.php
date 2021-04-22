@@ -63,7 +63,7 @@
                             </div>
                         
                             <button class="btn btn-primary mb-2" id="button_exceptions">LOGAR</button>
-                            <a class="btn btn-success mb-2" id="button_exceptions" href="Views/cadastro.php">CADASTRAR</a>
+                            <a class="btn btn-success mb-2" id="button_exceptions" href="Views/cadastro.php.php">CADASTRAR</a>
                         </form>
                     </div>
                 </div>
