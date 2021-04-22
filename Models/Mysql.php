@@ -11,7 +11,7 @@ class Mysql
     public function __construct()
     {
         $db = parse_ini_file('../../Config/mysql.ini');
-        $this->dsn = 'mysql:host='.$db['server'].';dbname'.$db['name'].'charset=utf8';
+        $this->dsn = 'mysql:host='.$db['server'].';dbname'.$db['name'].';charset=utf8';
         $this->root = $db['user'];
         $this->pass = $db['pwd'];
         $this->con = new PDO($this->dsn, $this->root, $this->pass);

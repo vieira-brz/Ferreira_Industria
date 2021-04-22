@@ -8,7 +8,8 @@ $con = Mysql::getInstance();
 $users = new Usuarios($con);
 
 $email = $_SESSION['email'];
-$nome = utf8_encode(ucwords(strtolower($_POST['nome'])));
+$u8 = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $_POST['nome']);
+$nome = ucwords(strtolower($u8));
 
 $dados = $users->alteraSomenteNome($db, $tabela1, $nome, $email);
 

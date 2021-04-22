@@ -15,10 +15,10 @@ if (isset($email) && !empty($email) && isset($senha) && !empty($senha))
 
     if (count($dados) == 1) 
     {
-        $_SESSION['nome'] = $dados[0]['NOME'];
+        $_SESSION['nome'] = utf8_encode($dados[0]['NOME']);
 
         $primeiroNome = explode(" ", $dados[0]['NOME']);
-        $_SESSION['primeiroNome'] = strtoupper($primeiroNome[0]);
+        $_SESSION['primeiroNome'] = utf8_encode(strtoupper($primeiroNome[0]));
 
         $_SESSION['email'] = $dados[0]['EMAIL'];
         $_SESSION['senha'] = $dados[0]['SENHA'];
