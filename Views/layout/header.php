@@ -56,7 +56,7 @@ if (empty($_SESSION['logado']))
                     <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="admin/funcionarios.php">Funcionários</a></li>
                 <?php endif; ?>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="conta.php" id="navconta">Conta</a></li>
-                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../Controllers/php/sair.php">Sair</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../Controllers/php/sair">Sair</a></li>
             </ul>
         </nav>
     </header>

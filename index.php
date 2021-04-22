@@ -47,7 +47,7 @@
                             </span> 
                         <?php endif; unset($_SESSION['nao_autenticado']); ?>
                         
-                        <form class="formulario_form" action="Controllers/php/auth.php" method="post">
+                        <form class="formulario_form" action="Controllers/php/auth" method="post">
                             <div class="formulario_form_column">
                                 <i class="fas fa-at"></i><input type="email" placeholder="E-mail" name="email" required>
                                 <i class="fas fa-key"></i><input class="mb-4" type="password" placeholder="Senha" name="senha" required>

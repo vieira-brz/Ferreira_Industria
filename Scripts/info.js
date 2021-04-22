@@ -30,7 +30,7 @@ $('i#nome').click((e)=>
     {
         e.preventDefault();
 
-        $.post('../Functions/JS_FUNC/alteraSomenteNome.php', 
+        $.post('../Functions/JS_FUNC/alteraSomenteNome', 
         {
             nome: $('#nomenovoconta').val()
         }, 
@@ -70,7 +70,7 @@ $('i#email').click((e)=>
     {
         e.preventDefault();
 
-        $.post('../Functions/JS_FUNC/alteraSomenteEmail.php', 
+        $.post('../Functions/JS_FUNC/alteraSomenteEmail', 
         {
             email: $('#emailnovoconta').val()
         }, 
@@ -120,7 +120,7 @@ $('i#senha').click((e)=>
         {
             e.preventDefault();
 
-            $.post('../Functions/JS_FUNC/alteraSomenteSenha.php', 
+            $.post('../Functions/JS_FUNC/alteraSomenteSenha', 
             {
                 senha: $('#senhanovaconta').val()
             }, 

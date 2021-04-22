@@ -64,7 +64,7 @@ echo
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../contato.php">Contato</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../conta.php">Conta</a></li>
-                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair.php">Sair</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -75,7 +75,7 @@ echo
                 <div class="card-body" style="background: var(--cor-principal);">
                     <div class="formulario">
                         <h3 class="mb-1">EDITAR FUNCIONÁRIO</h3>
-                        <form class="formulario_form" action="../../Controllers/php/editaUsers.php" method="post">
+                        <form class="formulario_form" action="../../Controllers/php/editaUsers" method="post">
                             <div class="formulario_form_column mb-1">
                                 <div class="formulario_form_column mb-3">
                                 <i class="fas fa-user"></i>

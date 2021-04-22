@@ -58,7 +58,7 @@ if ($_SESSION['acesso'] != 'Master')
                     <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
                 <?php endif; ?>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../conta.php">Conta</a></li>
-                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair.php">Sair</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -115,12 +115,12 @@ if ($_SESSION['acesso'] != 'Master')
                 <td>'.$key['ACESSO'].'</td>
                 <td>
                     <div class="d-flex justify-content-center">
-                        <form action="editarFuncionarios.php" method="post">
+                        <form action="editarFuncionarios" method="post">
                             <input type="hidden" name="IDED" value="'.$key['ID'].'">
                             <button class="btn btn-primary">EDITAR</button>
                         </form>
                         &nbsp
-                        <form action="../../Controllers/php/excluirUsers.php" method="post">
+                        <form action="../../Controllers/php/excluirUsers" method="post">
                             <input type="hidden" name="IDEX" value="'.$key['ID'].'">
                             <button class="btn btn-danger">EXCLUIR</button>
                         </form>

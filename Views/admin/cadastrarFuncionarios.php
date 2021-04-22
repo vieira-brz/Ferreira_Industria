@@ -58,7 +58,7 @@ if ($_SESSION['acesso'] != 'Master')
                     <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
                 <?php endif; ?>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../conta.php">Conta</a></li>
-                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair.php">Sair</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -81,7 +81,7 @@ if ($_SESSION['acesso'] != 'Master')
                         </span>
                     <?php endif; unset($_SESSION['nao_cadastrado']); ?>
 
-                        <form class="formulario_form" action="../../Controllers/php/cadastraAdmin.php" method="post">
+                        <form class="formulario_form" action="../../Controllers/php/cadastraAdmin" method="post">
                             <div class="formulario_form_column">
                                 <i class="fas fa-user"></i><input type="text" placeholder="Nome completo" name="nome" required>
                                 <i class="fas fa-at"></i><input type="email" placeholder="E-mail" name="email" required>
