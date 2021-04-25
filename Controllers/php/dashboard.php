@@ -8,7 +8,9 @@ $dbf = new Mysql;
 $query = "SELECT * FROM ".$db.".".$tabelanode;
 $dados = $dbf->readQuery($query);
 
-setlocale(LC_TIME, 'Portuguese_Brazil');
+date_default_timezone_set('America/Sao_Paulo');
+setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+
 $semana = date("d/m/Y", strtotime("- 365 days"));
 
 $retorno = array();

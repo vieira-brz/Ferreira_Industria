@@ -1,29 +1,36 @@
 $('document').ready(()=>{
-    $.get("../Controllers/php/dashboard.php", function(dados, status) {
-
-        var valores = JSON.parse(dados);
-
-        var diasSemana = [];
-        var consumoSemanaEnergia = [];
-        var consumoSemanaEnergiaHorario = [];
-
-        $.each(valores, function(key, value)
-        {
-            $.each(value, function(chavePeriodo, consumo){
-                $.each(consumo, function(chaveEnergia, valor)
-                {
-                    if (chavePeriodo = 'semanal')
+    
+    function getDataDashboard() 
+    {
+        $.get("../Controllers/php/dashboard.php", function(dados, status) {
+            
+            var valores = JSON.parse(dados);
+            
+            var diasSemana = [];
+            var consumoSemanaEnergia = [];
+            var consumoSemanaEnergiaHorario = [];
+            
+            $.each(valores, function(key, value)
+            {
+                $.each(value, function(chavePeriodo, consumo){
+                    $.each(consumo, function(chaveEnergia, valor)
                     {
-                        diasSemana.push(chaveEnergia);
-                        consumoSemanaEnergia.push(valor.ENERGIA);
-                        consumoSemanaEnergiaHorario.push(valor.HORARIO);
-                    }
+                        if (chavePeriodo = 'semanal')
+                        {
+                            diasSemana.push(chaveEnergia);
+                            consumoSemanaEnergia.push(valor.ENERGIA);
+                            consumoSemanaEnergiaHorario.push(valor.HORARIO);
+                        }
+                    });
                 });
             });
+            
+            grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario);
         });
-
-        grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario);
-    });
+    }
+    
+    getDataDashboard();
+    setInterval(() => {getDataDashboard();}, 30000);
 });
 
 function grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario)
