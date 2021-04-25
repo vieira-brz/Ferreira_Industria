@@ -15,7 +15,7 @@ $('document').ready(()=>{
                 $.each(value, function(chavePeriodo, consumo){
                     $.each(consumo, function(chaveEnergia, valor)
                     {
-                        if (chavePeriodo = 'semanal')
+                        if (chavePeriodo == 'semanal')
                         {
                             diasSemana.push(chaveEnergia);
                             consumoSemanaEnergia.push(valor.ENERGIA);
