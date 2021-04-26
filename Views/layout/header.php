@@ -52,6 +52,7 @@ if (empty($_SESSION['logado']))
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="inicial.php">Home</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="sobre.php">Sobre</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="contato.php">Contato</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="graficos.php">Gráficos</a></li>
                 <?php if(isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'Master'): ?>
                     <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="admin/funcionarios.php">Funcionários</a></li>
                 <?php endif; ?>

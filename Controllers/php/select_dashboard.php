@@ -10,11 +10,13 @@ $graf = new Grafico($con);
 date_default_timezone_set('America/Sao_Paulo');
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 
-$semana = date("d/m/Y", strtotime("- 365 days"));
+$datai = date('d/m/Y', strtotime($_POST['datai']));
+$dataf = date('d/m/Y', strtotime($_POST['dataf']));
 
 $retorno = array();
 
-$dataBox[] = $graf->buscaDados($semana, $retorno);
+$dask = new Grafico();
+$dataBox[] = $dask->dataSelecionada($datai, $dataf, $retorno);
 
 echo json_encode($dataBox);
 ?>

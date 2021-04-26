@@ -62,6 +62,7 @@ echo
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../inicial.php">Home</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../sobre.php">Sobre</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../contato.php">Contato</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../graficos.php">Gráficos</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../conta.php">Conta</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado" id="liu"><a class="navbar_ul_li_a liu" href="../../Controllers/php/sair">Sair</a></li>
@@ -104,8 +105,8 @@ echo
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="../Scripts/menu.js"></script>
-    <script src="../Scripts/info.js"></script>
+    <script src="../../Scripts/menu.js"></script>
+    <script src="../../Scripts/info.js"></script>
 </body>
 </html>
 '; 

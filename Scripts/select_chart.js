@@ -1,8 +1,9 @@
 $('document').ready(()=>{
     
-    function getDataDashboard() 
-    {
-        $.get("../Controllers/php/dashboard.php", function(dados, status) { 
+    $('.btn').click(()=>
+    {        
+        $.post("../Controllers/php/select_dashboard.php", {datai: $('[name="datai"]').val(), dataf: $('[name="dataf"]').val()}, function(dados, status) { 
+            alert(dados);
             if (status == 'success')
             {
                 var valores = JSON.parse(dados);
@@ -15,15 +16,7 @@ $('document').ready(()=>{
                 {
                     $.each(value, function(chavePeriodo, consumo)
                     {
-                        $.each(consumo, function(chaveEnergia, valor)
-                        {
-                            if (chavePeriodo == 'semanal')
-                            {
-                                diasSemana.push(chaveEnergia);
-                                consumoSemanaEnergia.push(valor.ENERGIA);
-                                consumoSemanaEnergiaHorario.push(valor.HORARIO);
-                            }
-                        });
+                        console.log(chavePeriodo + '   ' + consumo);
                     });
                 });
                 
@@ -34,10 +27,7 @@ $('document').ready(()=>{
                 alert('Erro na base de dados, chame o suporte! \nOrigem do erro: gráfico de energia.');
             }
         });
-    }
-    
-    getDataDashboard();
-    setInterval(() => {getDataDashboard();}, 30000);
+    });
 });
 
 function grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario)

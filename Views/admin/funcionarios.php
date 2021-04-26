@@ -54,6 +54,7 @@ if ($_SESSION['acesso'] != 'Master')
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../inicial.php">Home</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../sobre.php">Sobre</a></li>
                 <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../contato.php">Contato</a></li>
+                <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="../graficos.php">Gráficos</a></li>
                 <?php if(isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'Master'): ?>
                     <li class="navbar_ul_li navbar_ul_li_fechado"><a class="navbar_ul_li_a" href="funcionarios.php">Funcionários</a></li>
                 <?php endif; ?>
@@ -111,7 +112,7 @@ if ($_SESSION['acesso'] != 'Master')
             '
             <tr>
                 <td>'.$key['ID'].'</td>
-                <td>'.$key['NOME'].'</td>
+                <td>'.utf8_encode($key['NOME']).'</td>
                 <td>'.$key['ACESSO'].'</td>
                 <td>
                     <div class="d-flex justify-content-center">
@@ -146,7 +147,7 @@ if ($_SESSION['acesso'] != 'Master')
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="../Scripts/menu.js"></script>
-    <script src="../Scripts/info.js"></script>
+    <script src="../../Scripts/menu.js"></script>
+    <script src="../../Scripts/info.js"></script>
 </body>
 </html>
