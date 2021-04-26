@@ -14,7 +14,7 @@ $semana = date("d/m/Y", strtotime("- 365 days"));
 
 $retorno = array();
 
-$dataBox[] = $graf->buscaDados($semana, $retorno);
+$dataBox[] = $graf->buscaDados($semana, $retorno, $db, $tabelanode);
 
 echo json_encode($dataBox);
 ?>

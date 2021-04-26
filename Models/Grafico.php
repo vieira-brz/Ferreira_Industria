@@ -9,7 +9,7 @@ class Grafico
         $this->con = $conMysql;
     }
 
-    public function buscaDados($semana, $retorno)
+    public function buscaDados($semana, $retorno, $db, $tabelanode)
     {
         $query = "SELECT * FROM ".$db.".".$tabelanode;
         $dados = $this->con->readQuery($query);   
@@ -28,7 +28,7 @@ class Grafico
         return $retorno;
     }
 
-    public function dataSelecionada($datai, $dataf, $retorno)
+    public function dataSelecionada($datai, $dataf, $retorno, $db, $tabelanode)
     {
         $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE data BETWEEN '".$datai."' and '".$dataf."'";
         $dados = $this->con->readQuery($query); 
