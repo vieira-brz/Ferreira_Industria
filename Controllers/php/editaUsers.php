@@ -5,7 +5,8 @@ include '../../Config/database.php';
 include '../../Models/Usuarios.php';
 
 $value = $_POST['IDED'];
-$nome = utf8_encode(ucwords(strtolower($_POST['nome'])));
+$u8 = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $_POST['nome']);
+$nome = ucwords(strtolower($u8));
 $email = ucwords($_POST['email']);
 $acesso = ucwords(strtolower($_POST['acesso']));
 
