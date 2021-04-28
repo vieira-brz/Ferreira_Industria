@@ -1,11 +1,26 @@
 $('document').ready(()=>{
     
-    $('.btn').click(()=>
-    {        
-        $.post("../Controllers/php/select_dashboard.php", {datai: $('[name="datai"]').val(), dataf: $('[name="dataf"]').val()}, function(dados, status) { 
-            alert(dados);
-            if (status == 'success')
+    $('.btn-primary').click((e)=>
+    {            
+        var datas = [];
+        var consumo = [];
+
+        e.preventDefault();
+
+        alert($('input[name="datai"]').val())
+        alert($('input[name="dataf"]').val())
+        
+        $.post('../Controllers/php/select_dashboard.php', 
+        {
+            inicial: $('input[name="datai"]').val(), 
+            final: $('input[name="dataf"]').val()
+        }, 
+        function(dados, status) 
+        { 
+            if (status == 'success' && dados.charAt(0) != '<')
             {
+                $('.second_section_content').css('display','block');
+
                 var valores = JSON.parse(dados);
                 
                 var diasSemana = [];
@@ -28,9 +43,18 @@ $('document').ready(()=>{
             }
         });
     });
+
+    $('.btn-danger').click((e)=>
+    {
+        e.preventDefault();
+
+        $('input').val('');
+    });
+
+    grafico(datas, consumo);
 });
 
-function grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario)
+function grafico(datas, consumo)
 {
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {

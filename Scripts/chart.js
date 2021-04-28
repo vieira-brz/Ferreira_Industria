@@ -2,7 +2,8 @@ $('document').ready(()=>{
     
     function getDataDashboard() 
     {
-        $.get("../Controllers/php/dashboard.php", function(dados, status) { 
+        $.get("../Controllers/php/dashboard.php", function(dados, status) 
+        { 
             if (status == 'success')
             {
                 var valores = JSON.parse(dados);

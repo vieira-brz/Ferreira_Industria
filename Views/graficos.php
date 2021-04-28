@@ -6,22 +6,30 @@
         }
     </style>
 
-    <main class="content">
-        <div class="d-flex justify-content-center mt-5">
-            <div class="content_datas">
-                <label for="datai">Selecione uma data inicial: &nbsp</label>
-                <input type="date" name="datai">
+    <main class="content" style="height: 76vh;">
+        <center><h2 class="mt-5">SELECIONE DUAS DATAS PARA VISUALIZAR O GRÁFICO</h2></center>
+        <div class="d-flex justify-content-center mt-5 mb-3">
+            <div class="content_datas d-flex">
+                <center class="mb-2">
+                    <label for="datai">Selecione uma data inicial</label>
+                </center>
+                <input class="text-center" type="date" name="datai">
             </div>
-            <div class="content_datas">
-                <label for="datai">Selecione uma data final: &nbsp</label>
-                <input type="date" name="dataf">
+            <div class="content_datas d-flex">
+                <center class="mb-2">
+                    <label for="dataf">Selecione uma data final</label>
+                </center>
+                <input class="text-center" type="date" name="dataf">
             </div>
-            <button class="btn btn-primary">Buscar</button>
         </div>
 
-        <section class="second_section_content mt-5 mb-5">
+        <div class="d-flex justify-content-center mb-5">
+            <center><button class="btn btn-primary" style="width:205px; margin:10px 30px;">Buscar</button></center>
+            <center><button class="btn btn-danger" style="width:205px; margin:10px 30px;">Limpar</button></center>
+        </div>
+
+        <section class="second_section_content mb-5" style="display:none">
             <div class="second_section_content_body">
-                <form action="../Controllers/php/dashboard.php"></form>
                 <canvas id="myChart"></canvas>
             </div>
         </section>
@@ -30,4 +38,16 @@
     <script src="../Scripts/info.js"></script>
     <script src="../Scripts/select_chart.js"></script>
 
-<?php include 'layout/footer.php'; ?>
+    <footer class="footer">
+        <!-- PRIMEIRA PARTE FOOTER -->
+        <div class="footer_copyright d-flex">
+            TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../Scripts/menu.js"></script>
+    <script src="../Scripts/info.js"></script>
+    <script src="../Scripts/select_chart.js"></script>
+</body>
+</html>

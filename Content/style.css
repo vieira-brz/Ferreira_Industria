@@ -709,6 +709,10 @@ i.fas.fa-times:hover {
   padding: 0 5px;
 }
 
+.content_datas {
+  flex-direction: column;
+}
+
 /* RESPONSIVE PARA MOBILES */
 @media (max-width: 500px) 
 {

@@ -34,7 +34,7 @@ class Grafico
         $dados = $this->con->readQuery($query); 
 
         foreach ($dados as $key) 
-        {
+        { 
             $retorno['semanal'][date('d/m', strtotime($key['data']))]
             ['ENERGIA'] += $key['dado'];
         }

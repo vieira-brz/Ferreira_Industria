@@ -7,8 +7,8 @@ include '../../Config/database.php';
 $con = Mysql::getInstance();
 $graf = new Grafico($con);
 
-$datai = date('Y-m-d', strtotime($_POST['datai']));
-$dataf = date('Y-m-d', strtotime($_POST['dataf']));
+$datai = $_POST['inicial'];
+$dataf = $_POST['final'];
 
 $retorno = array();
 
