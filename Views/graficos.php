@@ -8,14 +8,14 @@
 
     <main class="content" style="height: 76vh;">
         <center><h2 class="mt-5">SELECIONE DUAS DATAS PARA VISUALIZAR O GRÁFICO</h2></center>
-        <div class="d-flex justify-content-center mt-5 mb-3">
-            <div class="content_datas d-flex">
+        <div class="d-flex justify-content-center mt-5 mb-1 content_data_select">
+            <div class="content_datas d-flex mb-3">
                 <center class="mb-2">
                     <label for="datai">Selecione uma data inicial</label>
                 </center>
                 <input class="text-center" type="date" name="datai">
             </div>
-            <div class="content_datas d-flex">
+            <div class="content_datas d-flex mb-3">
                 <center class="mb-2">
                     <label for="dataf">Selecione uma data final</label>
                 </center>
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center mb-5">
+        <div class="d-flex justify-content-center mb-5 content_buttons_select">
             <center><button class="btn btn-primary" style="width:205px; margin:10px 30px;">Buscar</button></center>
             <center><button class="btn btn-danger" style="width:205px; margin:10px 30px;">Limpar</button></center>
         </div>

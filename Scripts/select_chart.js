@@ -2,7 +2,7 @@ $('document').ready(()=>{
     
     $('.btn-primary').click((e)=>
     {            
-        var datas = [];
+        var periodo = [];
         var consumo = [];
 
         e.preventDefault();
@@ -35,7 +35,7 @@ $('document').ready(()=>{
                     });
                 });
                 
-                grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario);
+                grafico (periodo, consumo);
             }
             else
             {
@@ -50,11 +50,9 @@ $('document').ready(()=>{
 
         $('input').val('');
     });
-
-    grafico(datas, consumo);
 });
 
-function grafico(datas, consumo)
+function grafico(periodo, consumo)
 {
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {

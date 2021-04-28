@@ -735,6 +735,12 @@ i.fas.fa-times:hover {
   .rwmd i label {
     padding: 20px 0;
   }
+  .content_data_select {
+    flex-direction: column;
+  }
+  .content_buttons_select {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 860px)
