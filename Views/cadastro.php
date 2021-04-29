@@ -53,7 +53,7 @@
                             </span>
                         <?php endif; unset($_SESSION['nao_cadastrado']); ?>
 
-                        <form class="formulario_form" action="../Controllers/php/cadastra.php" method="post">
+                        <form class="formulario_form" action="../Controllers/php/cadastra" method="post">
                             <div class="formulario_form_column">
                                 <i class="fas fa-user"></i><input type="text" placeholder="Nome completo" name="nome" required>
                                 <i class="fas fa-at"></i><input type="email" placeholder="E-mail" name="email" required>
