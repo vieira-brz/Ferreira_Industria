@@ -80,7 +80,7 @@ echo
                             <div class="formulario_form_column mb-1">
                                 <div class="formulario_form_column mb-3">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Nome completo" name="nome" value="'.$dadosE[0]['NOME'].'" required>
+                                <input type="text" placeholder="Nome completo" name="nome" value="'.utf8_encode($dadosE[0]['NOME']).'" required>
 
                                 <i class="fas fa-at"></i>
                                 <input type="email" placeholder="E-mail" name="email" value="'.$dadosE[0]['EMAIL'].'" required>

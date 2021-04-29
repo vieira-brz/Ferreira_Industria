@@ -4,11 +4,10 @@ include '../../Models/Mysql.php';
 include '../../Config/database.php';
 include '../../Models/Usuarios.php';
 
-$u8 = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $_POST['nome']);
-$nome = ucwords(strtolower($u8));
+$nome = ucwords(strtolower(iconv("UTF-8", "ISO-8859-1//TRANSLIT", $_POST['nome'])));
 $email = $_POST['email'];
 $senha = md5($_POST['senha']);
-$palavra = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $_POST['palavra']);;
+$palavra = $_POST['palavra'];
 
 if (empty($_POST['acesso']))
 {

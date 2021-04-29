@@ -60,7 +60,7 @@
                         </span> 
                     <?php endif; unset($_SESSION['senha_nao_alterada']); ?>
                     
-                    <form action="../Controllers/php/alteraSenha.php" method="post">
+                    <form action="../Controllers/php/alteraSenha" method="post">
                         <div class="formulario_form_column">
                             <i class="fas fa-at"></i><input type="email" placeholder="E-mail" name="email" required>
                             <i class="fas fa-key"></i><input type="password" placeholder="Senha" name="senha" required>
