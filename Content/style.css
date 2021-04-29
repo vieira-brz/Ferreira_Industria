@@ -674,7 +674,7 @@ i.fas.fa-times:hover {
 .cdbd i {
   font-size: 30px;
   color: var(--cor-branco-absoluto);
-  transition: .5s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 .cdbd i:hover {
