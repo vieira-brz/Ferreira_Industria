@@ -573,6 +573,19 @@ input:focus, textarea:focus {
   display: none;
 }
 
+.mostraGastos {
+  width: 100%;
+  height: 80px;
+  border: 2px solid var(--cor-efeito);
+}
+
+.mostraGastos h3 {
+  line-height: 80px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--cor-text);
+}
+
 /* SOBRE */
 .titles_sobre {
   background-image: url('assets/ferreira-gg.png');

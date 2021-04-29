@@ -5,7 +5,7 @@
         <div class="container ctcards">
             <div class="card col-md-3 cardct">
                 <div class="card-body cdbd bg-primary">
-                    <a href="mailto:ferreira@gmail.com?subject=Assunto:%20&body=Boa tarde, Ferreira Indústria%0A%0AEscreva sua mensagem...%0A%0AAss: ...%0A%0A"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:financeiro@ferreiraquica.com.BR?subject=Assunto:%20&body=Boa tarde, Ferreira Indústria%0A%0AEscreva sua mensagem...%0A%0AAss: ...%0A%0A"><i class="fas fa-envelope"></i></a>
                 </div>
                 <div class="mt-3 text-center d-flex justify-content-center">
                     <small>Redirecionamento para o &nbsp</small><small>E-mail.</small>
@@ -14,7 +14,7 @@
         
             <div class="card col-md-3 cardct">
                 <div class="card-body cdbd bg-success">
-                    <a href="https://api.whatsapp.com/send?phone=55419xxxxxxxx&text=Olá,%20Ferreira%20Indústria!" target="blank"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5541933013750&text=Olá,%20Ferreira%20Indústria!" target="blank"><i class="fas fa-phone-alt"></i></a>
                 </div>
                 <div class="mt-3 text-center d-flex justify-content-center">
                     <small>Redirecionamento o &nbsp</small><small>WhatsApp Web.</small>

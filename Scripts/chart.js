@@ -1,4 +1,18 @@
 $('document').ready(()=>{
+
+    var totalGastos = [];
+    function somarGastos(reais)
+    {
+        var soma = 0;
+        
+        for (var i = 0; i < reais.length; i++)
+        {
+            totalGastos[i] = parseFloat(reais[i]);
+            soma += parseFloat(totalGastos[i]);    
+        }
+
+        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ soma +'</h3>');
+    }
     
     function getDataDashboard() 
     {
@@ -10,7 +24,7 @@ $('document').ready(()=>{
                 
                 var diasSemana = [];
                 var consumoSemanaEnergia = [];
-                var consumoSemanaEnergiaHorario = [];
+                var valorDoConsumo = [];
                 
                 $.each(valores, function(key, value)
                 {
@@ -22,13 +36,14 @@ $('document').ready(()=>{
                             {
                                 diasSemana.push(chaveEnergia);
                                 consumoSemanaEnergia.push(valor.ENERGIA);
-                                consumoSemanaEnergiaHorario.push(valor.HORARIO);
+                                valorDoConsumo.push(valor.ENERGIA * 0.52);
                             }
                         });
                     });
                 });
-                
-                grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario);
+
+                somarGastos(valorDoConsumo);
+                grafico (diasSemana, consumoSemanaEnergia);
             }
             else
             {
@@ -41,7 +56,7 @@ $('document').ready(()=>{
     setInterval(() => {getDataDashboard();}, 30000);
 });
 
-function grafico (diasSemana, consumoSemanaEnergia, consumoSemanaEnergiaHorario)
+function grafico (diasSemana, consumoSemanaEnergia)
 {
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -56,13 +71,6 @@ var chart = new Chart(ctx, {
                 borderColor: 'rgb(0, 161, 153)',
                 backgroundColor: 'rgb(0, 161, 153, .2)',
                 data: consumoSemanaEnergia,
-            },
-            {
-                label: 'HORÁRIO',
-                borderWidth: 2,
-                borderColor: 'rgb(60, 0, 255, 103)',
-                backgroundColor: 'rgb(60, 0, 255, .2)',
-                data: consumoSemanaEnergiaHorario,
             },
         ]
     },

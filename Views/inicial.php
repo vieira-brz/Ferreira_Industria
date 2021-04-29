@@ -15,12 +15,15 @@
         </section>
 
         <!-- SEGUNDO PARTE DO SITE -->
-        <section class="second_section_content mb-5">
+        <section class="second_section_content mb-3">
             <div class="second_section_content_body">
                 <form action="../Controllers/php/dashboard.php"></form>
                 <canvas id="myChart"></canvas>
             </div>
         </section>
+        
+        <div class="mostraGastos mb-5">
+        </div>
     </main>
 
     <script src="../Scripts/chart.js"></script>
