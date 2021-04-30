@@ -47,8 +47,6 @@ $('document').ready(()=>{
                         {
                             $.each(consumo, function(idx, key)
                             {
-                                console.log(idx);
-                                console.log(key);
                                 periodo.push(idx);
                                 energia.push(key.ENERGIA);
                                 valorDoConsumo.push(key.ENERGIA * 0.52);
@@ -56,15 +54,15 @@ $('document').ready(()=>{
                         });
                     });
     
-                    var desinvertidoEnergia = energia.reverse();
-                    var desinvertidoPeriodo = periodo.reverse();
+                    // var desinvertidoEnergia = energia.reverse();
+                    // var desinvertidoPeriodo = periodo.reverse();
     
                     somarGastos(valorDoConsumo);
     
                     $('.carregamento').css('display', 'none');
                     $('.content').css('display','block');
     
-                    grafico (desinvertidoPeriodo, desinvertidoEnergia);
+                    grafico (periodo, energia);
                 }
                 else
                 {
@@ -83,21 +81,21 @@ $('document').ready(()=>{
     });
 });
 
-function grafico(desinvertidoPeriodo, desinvertidoEnergia)
+function grafico(periodo, energia)
 {
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data:
     {
-        labels: desinvertidoPeriodo,
+        labels: periodo,
         datasets: [
             {
                 label: 'ENERGIA',
                 borderWidth: 2,
                 borderColor: 'rgb(0, 161, 153)',
                 backgroundColor: 'rgb(0, 161, 153, .2)',
-                data: desinvertidoEnergia,
+                data: energia,
             },
         ]
     },

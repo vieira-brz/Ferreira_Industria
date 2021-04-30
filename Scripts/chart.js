@@ -42,11 +42,11 @@ $('document').ready(()=>{
                     });
                 });
 
-                var desinvertidoEnergia = consumoSemanaEnergia.reverse();
-                var desinvertidoPeriodo = diasSemana.reverse();
+                // var desinvertidoEnergia = consumoSemanaEnergia.reverse();
+                // var desinvertidoPeriodo = diasSemana.reverse();
 
                 somarGastos(valorDoConsumo);
-                grafico (desinvertidoPeriodo, desinvertidoEnergia);
+                grafico (diasSemana, consumoSemanaEnergia);
             }
             else
             {
@@ -59,21 +59,21 @@ $('document').ready(()=>{
     setInterval(() => {getDataDashboard();}, 30000);
 });
 
-function grafico (desinvertidoPeriodo, desinvertidoEnergia)
+function grafico (diasSemana, consumoSemanaEnergia)
 {
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data:
     {
-        labels: desinvertidoPeriodo,
+        labels: diasSemana,
         datasets: [
             {
                 label: 'ENERGIA',
                 borderWidth: 2,
                 borderColor: 'rgb(0, 161, 153)',
                 backgroundColor: 'rgb(0, 161, 153, .2)',
-                data: desinvertidoEnergia,
+                data: consumoSemanaEnergia,
             },
         ]
     },

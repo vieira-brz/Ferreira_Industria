@@ -11,7 +11,7 @@ class Grafico
 
     public function buscaDados($semana, $retorno, $db, $tabelanode)
     {
-        $query = "SELECT * FROM ".$db.".".$tabelanode;
+        $query = "SELECT * FROM ".$db.".".$tabelanode." ORDER BY data";
         $dados = $this->con->readQuery($query);   
 
         foreach ($dados as $key)
@@ -30,7 +30,7 @@ class Grafico
 
     public function dataSelecionada($datai, $dataf, $retorno, $db, $tabelanode)
     {
-        $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE data BETWEEN '".$datai."' and '".$dataf."'";
+        $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE data BETWEEN '".$datai."' and '".$dataf."' ORDER BY data";
         $dados = $this->con->readQuery($query); 
 
         foreach ($dados as $key) 
