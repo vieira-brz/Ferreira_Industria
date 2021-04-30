@@ -70,7 +70,7 @@ echo
         </nav>
     </header>
 
-    <main class="content" style="height: 76vh;">
+    <main class="content">
         <div class="d-flex justify-content-center mt-4 mb-4">
             <div class="card shadow p-2" style="width: 22rem;">
                 <div class="card-body" style="background: var(--cor-principal);">

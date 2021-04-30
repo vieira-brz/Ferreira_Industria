@@ -6,7 +6,15 @@
         }
     </style>
 
-    <main class="content" style="height: 76vh;">
+    <div class="carregamento" style="display:none;">
+        <center>
+            <img src="../Content/assets/load-unscreen.gif" alt="Carregamento">
+            <br>
+            <text style="font-weight:bold; font-size:20px">Carregando Dados</text>
+        </center>
+    </div>
+
+    <main class="content">
         <center><h2 class="mt-5">SELECIONE DUAS DATAS PARA VISUALIZAR O GRÁFICO</h2></center>
         <div class="d-flex justify-content-center mt-5 mb-1 content_data_select">
             <div class="content_datas d-flex mb-3">
@@ -33,12 +41,15 @@
                 <canvas id="myChart"></canvas>
             </div>
         </section>
+
+        <div class="mostraGastos mb-5" style="display:none">
+        </div>
     </main>
 
     <script src="../Scripts/info.js"></script>
     <script src="../Scripts/select_chart.js"></script>
 
-    <footer class="footer">
+    <footer class="footer" style="margin-bottom: -1% !important;">
         <!-- PRIMEIRA PARTE FOOTER -->
         <div class="footer_copyright d-flex">
             TODOS OS DIREITOS RESERVADOS &nbsp - &nbsp FERREIRA ©

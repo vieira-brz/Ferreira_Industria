@@ -685,6 +685,23 @@ i.fas.fa-times:hover {
   box-shadow: 0 0 15px #230aff !important;
 }
 
+/* SELECIONA GRÁFICO */
+.carregamento
+{
+  padding: 0 30px 111px 0;
+  border-top: 2px solid var(--cor-transparente);
+  border-bottom: 2px solid var(--cor-transparente); 
+}
+
+.carregamento text
+{
+  position: absolute;
+  top: 415px;
+  left: 50%;
+  transform: translateX(-58%);    
+}
+
+
 /* FOOTER */
 .footer {
   width: 100%;

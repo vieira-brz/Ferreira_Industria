@@ -35,8 +35,8 @@ class Grafico
 
         foreach ($dados as $key) 
         { 
-            $retorno['semanal'][date('d/m', strtotime($key['data']))]
-            ['ENERGIA'] += $key['dado'];
+            $retorno['selecao'][date('d/m', strtotime($key['data']))]
+            ['ENERGIA'] = $key['dado'];
         }
         return $retorno;
     }
