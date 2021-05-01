@@ -17,6 +17,7 @@ $('document').ready(()=>{
     $('.btn-primary').click((e)=>
     {            
         e.preventDefault();
+        e.stopImmediatePropagation();
 
         $('.carregamento').css('display', 'block');
         $('.content').css('display','none');
@@ -76,6 +77,7 @@ $('document').ready(()=>{
     $('.btn-danger').click((e)=>
     {
         e.preventDefault();
+        e.stopImmediatePropagation();
 
         $('input').val('');
     });
