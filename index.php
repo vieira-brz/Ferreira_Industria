@@ -18,6 +18,9 @@
     <!-- CHART JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+    <!-- SWEET ALERT JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -42,9 +45,14 @@
                         <h3 class="mb-1">ENTRAR</h3>
 
                         <?php if(isset($_SESSION['nao_autenticado'])): ?>
-                            <span class="alert_danger afo">
-                                <label>Usuário ou senha inválidos.</label>
-                            </span> 
+                            <script>
+                                swal({
+                                    title: "Erro!",
+                                    text: "Usuário ou senha inválidos!",
+                                    icon: "error",
+                                    button: "Entendi",
+                                });
+                            </script>
                         <?php endif; unset($_SESSION['nao_autenticado']); ?>
                         
                         <form class="formulario_form" action="Controllers/php/auth" method="post">

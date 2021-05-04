@@ -18,6 +18,9 @@
     <!-- CHART JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+    <!-- SWEET ALERT JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -42,15 +45,25 @@
                         <h3 class="mb-1">CADASTRAR</h3>
 
                         <?php if(isset($_SESSION['usuario_existe'])): ?>
-                            <span class="alert_danger afo" role="alert">
-                                <label>Usuário já existe.</label>
-                            </span>
+                            <script>
+                                swal({
+                                    title: "Aviso!",
+                                    text: "Usuário já existe com mesmo email!",
+                                    icon: "warning",
+                                    button: "Entendi",
+                                });
+                            </script>
                         <?php endif; unset($_SESSION['usuario_existe']); ?>
 
                         <?php if(isset($_SESSION['nao_cadastrado'])): ?>
-                            <span class="alert_warning afo" role="alert">
-                                <label>Erro ao cadastrar.</label>
-                            </span>
+                            <script>
+                                swal({
+                                    title: "Erro!",
+                                    text: "Lamento... você não foi cadastrado!",
+                                    icon: "error",
+                                    button: "Entendi",
+                                });
+                            </script>
                         <?php endif; unset($_SESSION['nao_cadastrado']); ?>
 
                         <form class="formulario_form" action="../Controllers/php/cadastra" method="post">

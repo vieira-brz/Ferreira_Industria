@@ -38,18 +38,34 @@ $('i#nome').click((e)=>
         {
             if (data == 1)
             {
+                swal({
+                    title: "Success!",
+                    text: "Seu nome foi alterado com sucesso, logue novamente para atualizar sua conta!",
+                    icon: "success",
+                    button: "Prosseguir",
+                });
                 $('.conta_texto_nome').css('padding-top', 0);
                 $('.conta_nome_edit').text($('#nomenovoconta').val());
                 $('.conta_nome_edit').append('<i class="fas fa-edit" style="float: right;" id="nome"></i> ');
             }
             else if (data == -1)
             {
-                alert('Nome não alterado!');
+                swal({
+                    title: "Erro!",
+                    text: "Lamento... não foi possível alterar seu nome!",
+                    icon: "error",
+                    button: "Entendi",
+                });
                 location.reload();
             }
             else
             {
-                alert('Erro não detectado!');
+                swal({
+                    title: "Erro!",
+                    text: "Erro ao conectar-se com o servidor, chame o suporte!",
+                    icon: "error",
+                    button: "Entendi",
+                });
                 location.reload();
             }
         });
@@ -78,24 +94,44 @@ $('i#email').click((e)=>
         {
             if (data == 1)
             {
-                alert('E-mail alterado, ao logar novamente você poderá visualizar seu e-mail atualizado nesta aba.');
+                swal({
+                    title: "Success!",
+                    text: "Seu email foi alterado com sucesso, logue novamente para atualizar sua conta!",
+                    icon: "success",
+                    button: "Prosseguir",
+                });
                 $('.conta_texto_email').css('padding-top', 0);
                 $('.conta_email_edit').text($('#emailnovoconta').val());
                 $('.conta_email_edit').append('<i class="fas fa-edit" style="float: right;" id="email"></i> ');
             }
             else if (data == 2)
             {
-                alert('Email não alterado.');
+                swal({
+                    title: "Erro!",
+                    text: "Lamento... não foi possível alterar seu email!",
+                    icon: "error",
+                    button: "Entendi",
+                });
                 location.reload();
             }
             else if (data == 3)
             {
-                alert('Email já existente!');
+                swal({
+                    title: "Aviso!",
+                    text: "Este e-mail já está em uso!",
+                    icon: "warning",
+                    button: "Entendi",
+                });
                 location.reload();
             }
             else
             {
-                alert('Erro não detectado!');
+                swal({
+                    title: "Erro!",
+                    text: "Erro ao conectar-se com o servidor, chame o suporte!",
+                    icon: "error",
+                    button: "Entendi",
+                });
                 location.reload();
             }
         });
@@ -128,17 +164,32 @@ $('i#senha').click((e)=>
             {
                 if (data == 1)
                 {
-                    alert('Senha alterada, ao logar novamente você poderá visualizar sua nova senha criptografada nesta aba.');
+                    swal({
+                        title: "Sucesso!",
+                        text: "Sua senha foi alterada com sucesso, logue novamente para atualizar sua conta!",
+                        icon: "success",
+                        button: "Prosseguir",
+                    });
                     location.reload();
                 }
                 else if (data == -1)
                 {
-                    alert('Senha não alterada!');
+                    swal({
+                        title: "Erro!",
+                        text: "Lamento... não foi possível alterar sua senha!",
+                        icon: "error",
+                        button: "Entendi",
+                    });
                     location.reload();
                 }
                 else
                 {
-                    alert('Erro não detectado!');
+                    swal({
+                        title: "Erro!",
+                        text: "Erro ao conectar-se com o servidor, chame o suporte!",
+                        icon: "error",
+                        button: "Entendi",
+                    });
                     location.reload();
                 }
             });
