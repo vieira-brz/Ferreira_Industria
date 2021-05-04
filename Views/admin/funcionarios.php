@@ -118,7 +118,7 @@ if ($_SESSION['acesso'] != 'Master')
                             <td>'.utf8_encode($key['NOME']).'</td>
                             <td>'.$key['ACESSO'].'</td>
                             <td>
-                                <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center btnAdmin">
                                     <form action="editarFuncionarios" method="post">
                                         <input type="hidden" name="IDED" value="'.$key['ID'].'">
                                         <button class="btn btn-primary">EDITAR</button>
