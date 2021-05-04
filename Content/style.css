@@ -703,11 +703,14 @@ i.fas.fa-times:hover {
 
 .input-fixed
 {
-  right: 50px;
-  bottom: 50px;
-  position: fixed;
-  width: 200px !important;
+  width: 15% !important;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-fixed:focus
+{
+  transition: .5s ease-in-out;
+  width: 30% !important;
 }
 
 /* FOOTER */

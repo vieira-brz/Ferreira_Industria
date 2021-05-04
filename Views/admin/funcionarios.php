@@ -95,6 +95,11 @@ if ($_SESSION['acesso'] != 'Master')
             </div>
         <?php endif; unset($_SESSION['status_cadastro']); ?>
 
+        <div class="d-flex mb-3">
+            <a href="cadastrarFuncionarios.php" style="margin:0 10px 0 0"><button class="btn btn-success">Cadastrar</button></a> 
+            <input class="form-control input-fixed" type="text" name="pesquisarNome" placeholder="Pesquisar..."/>
+        </div>
+
         <table class="table table-striped table-bordered table-dark">
             <tbody>
                 <tr>
@@ -102,7 +107,6 @@ if ($_SESSION['acesso'] != 'Master')
                     <td style="color: #fff;">NOME</td>
                     <td style="color: #fff;">ACESSO</td>
                     <td style="color: #fff;">AÇÕES</td>
-                    <td style="color: #fff;">NOVO</td>
                 </tr>       
                 <?php 
                     foreach ($dados as $key)
@@ -126,17 +130,12 @@ if ($_SESSION['acesso'] != 'Master')
                                     </form>
                                 </div>
                             </td>
-                            <td>
-                                <a href="cadastrarFuncionarios.php"><i style="color: #fff;" class="fas fa-user-plus"></i></a> 
-                            </td>
                         </tr>
                         ';
                     }
                 ?>
             </tbody>
         </table>
-
-        <input class="form-control input-fixed" type="text" name="pesquisarNome" placeholder="Pesquisar..."/>
     </main>
 
     <footer class="footer">
