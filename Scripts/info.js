@@ -145,3 +145,15 @@ $('i#senha').click((e)=>
         });
     }
 });
+
+$('input[name="pesquisarNome"]').keyup((e)=>
+{
+    e.preventDefault();
+
+    var value = $('input[name="pesquisarNome"]').val().toLowerCase();
+
+    $('.filterTr').filter(function() 
+    {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+});

@@ -64,7 +64,7 @@ if ($_SESSION['acesso'] != 'Master')
         </nav>
     </header>
 
-    <main class="content cntt" style="height: 76vh;">
+    <main class="content cntt">
         <?php if (isset($_SESSION['deletado'])): ?>
             <div class="alert alert-success">
                 <label>Deletado com sucesso!</label>
@@ -103,40 +103,40 @@ if ($_SESSION['acesso'] != 'Master')
                     <td style="color: #fff;">ACESSO</td>
                     <td style="color: #fff;">AÇÕES</td>
                     <td style="color: #fff;">NOVO</td>
-                </tr>
-                
-        <?php 
-        foreach ($dados as $key)
-        {
-            echo 
-            '
-            <tr>
-                <td>'.$key['ID'].'</td>
-                <td>'.utf8_encode($key['NOME']).'</td>
-                <td>'.$key['ACESSO'].'</td>
-                <td>
-                    <div class="d-flex justify-content-center">
-                        <form action="editarFuncionarios" method="post">
-                            <input type="hidden" name="IDED" value="'.$key['ID'].'">
-                            <button class="btn btn-primary">EDITAR</button>
-                        </form>
-                        &nbsp
-                        <form action="../../Controllers/php/excluirUsers" method="post">
-                            <input type="hidden" name="IDEX" value="'.$key['ID'].'">
-                            <button class="btn btn-danger">EXCLUIR</button>
-                        </form>
-                    </div>
-                </td>
-                <td>
-                    <a href="cadastrarFuncionarios.php"><i style="color: #fff;" class="fas fa-user-plus"></i></a> 
-                </td>
-            </tr>
-            ';
-        }
-        ?>
-
+                </tr>       
+                <?php 
+                    foreach ($dados as $key)
+                    {
+                        echo 
+                        '
+                        <tr class="filterTr">
+                            <td>'.$key['ID'].'</td>
+                            <td>'.utf8_encode($key['NOME']).'</td>
+                            <td>'.$key['ACESSO'].'</td>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <form action="editarFuncionarios" method="post">
+                                        <input type="hidden" name="IDED" value="'.$key['ID'].'">
+                                        <button class="btn btn-primary">EDITAR</button>
+                                    </form>
+                                    &nbsp
+                                    <form action="../../Controllers/php/excluirUsers" method="post">
+                                        <input type="hidden" name="IDEX" value="'.$key['ID'].'">
+                                        <button class="btn btn-danger">EXCLUIR</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="cadastrarFuncionarios.php"><i style="color: #fff;" class="fas fa-user-plus"></i></a> 
+                            </td>
+                        </tr>
+                        ';
+                    }
+                ?>
             </tbody>
         </table>
+
+        <input class="form-control input-fixed" type="text" name="pesquisarNome" placeholder="Pesquisar..."/>
     </main>
 
     <footer class="footer">

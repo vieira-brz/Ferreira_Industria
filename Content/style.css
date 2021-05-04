@@ -701,6 +701,14 @@ i.fas.fa-times:hover {
   transform: translateX(-58%);    
 }
 
+.input-fixed
+{
+  right: 50px;
+  bottom: 50px;
+  position: fixed;
+  width: 200px !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
 /* FOOTER */
 .footer {
