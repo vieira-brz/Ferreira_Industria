@@ -142,59 +142,68 @@ $('i#senha').click((e)=>
 {
     e.preventDefault();
     
-    var confirmacao = confirm('Sua senha está sendo mostrada de forma criptografada, deseja mesmo altera-la? Isso não mudará sua visualização!');
-    if (confirmacao == true)
-    {
-        $('.conta_senha_edit').text('');
-        $('.conta_texto_senha').css('padding-top', 10);
-        $('.conta_senha_edit').append('<input type="text" placeholder="Digite sua nova senha..." style="padding-left: 5px"; id="senhanovaconta">');
-        $('.conta_senha_edit').append('<i class="fas fa-times" style="float: right; padding: 10px 5px;" id="email"></i>');
-        $('i.fa-times').click((e)=>{ e.preventDefault(); location.reload();});
-        $('.conta_senha_edit').append('<i class="fas fa-check" style="float: right; padding: 10px 5px;" id="email"></i>');
+    swal({
+        title: "Deseja alterar sua senha?",
+        text: "Clique em Ok para prosseguir, mas lembre-se, sua senha continuará sendo mostrada de forma criptografada, porém isso não influencia nas demais ações do sistema!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((alteraSim) => {
+        if (alteraSim) {
+            $('.conta_senha_edit').text('');
+            $('.conta_texto_senha').css('padding-top', 10);
+            $('.conta_senha_edit').append('<input type="text" placeholder="Digite sua nova senha..." style="padding-left: 5px"; id="senhanovaconta">');
+            $('.conta_senha_edit').append('<i class="fas fa-times" style="float: right; padding: 10px 5px;" id="email"></i>');
+            $('i.fa-times').click((e)=>{ e.preventDefault(); location.reload();});
+            $('.conta_senha_edit').append('<i class="fas fa-check" style="float: right; padding: 10px 5px;" id="email"></i>');
 
-        $('.fa-check').click((e)=>
-        {
-            e.preventDefault();
+            $('.fa-check').click((e)=>
+            {
+                e.preventDefault();
 
-            $.post('../Functions/JS_FUNC/alteraSomenteSenha', 
-            {
-                senha: $('#senhanovaconta').val()
-            }, 
-            function(data)
-            {
-                if (data == 1)
+                $.post('../Functions/JS_FUNC/alteraSomenteSenha', 
                 {
-                    swal({
-                        title: "Sucesso!",
-                        text: "Sua senha foi alterada com sucesso, logue novamente para atualizar sua conta!",
-                        icon: "success",
-                        button: "Prosseguir",
-                    });
-                    location.reload();
-                }
-                else if (data == -1)
+                    senha: $('#senhanovaconta').val()
+                }, 
+                function(data)
                 {
-                    swal({
-                        title: "Erro!",
-                        text: "Lamento... não foi possível alterar sua senha!",
-                        icon: "error",
-                        button: "Entendi",
-                    });
-                    location.reload();
-                }
-                else
-                {
-                    swal({
-                        title: "Erro!",
-                        text: "Erro ao conectar-se com o servidor, chame o suporte!",
-                        icon: "error",
-                        button: "Entendi",
-                    });
-                    location.reload();
-                }
+                    if (data == 1)
+                    {
+                        swal({
+                            title: "Sucesso!",
+                            text: "Sua senha foi alterada com sucesso, logue novamente para atualizar sua conta!",
+                            icon: "success",
+                            button: "Prosseguir",
+                        });
+                        location.reload();
+                    }
+                    else if (data == -1)
+                    {
+                        swal({
+                            title: "Erro!",
+                            text: "Lamento... não foi possível alterar sua senha!",
+                            icon: "error",
+                            button: "Entendi",
+                        });
+                        location.reload();
+                    }
+                    else
+                    {
+                        swal({
+                            title: "Erro!",
+                            text: "Erro ao conectar-se com o servidor, chame o suporte!",
+                            icon: "error",
+                            button: "Entendi",
+                        });
+                        location.reload();
+                    }
+                });
             });
-        });
-    }
+        } else {
+            swal("Alteração de senha cancelada!", {icon:"error"});
+        }
+    });
 });
 
 $('input[name="pesquisarNome"]').keyup((e)=>

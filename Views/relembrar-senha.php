@@ -43,21 +43,36 @@
                     <h3 class="mb-1">ALTERAR SENHA</h3>
 
                     <?php if(isset($_SESSION['senha_alterada'])): ?>
-                        <span class="alert_success afo">
-                            <label>Senha alterada</label>
-                        </span> 
+                        <script>
+                            swal({
+                                title: "Sucesso!",
+                                text: "Senha alterada com sucesso!",
+                                icon: "success",
+                                button: "Ok",
+                            });
+                        </script>
                     <?php endif; unset($_SESSION['senha_alterada']); ?>
 
                     <?php if(isset($_SESSION['wordkey_error'])): ?>
-                        <span class="alert_danger afo">
-                            <label>Erro: Palavra chave incorreta.</label>
-                        </span> 
+                        <script>
+                            swal({
+                                title: "Erro!",
+                                text: "Palavra chave incorreta!",
+                                icon: "error",
+                                button: "Ok",
+                            });
+                        </script>
                     <?php endif; unset($_SESSION['wordkey_error']); ?>
 
                     <?php if(isset($_SESSION['senha_nao_alterada'])): ?>
-                        <span class="alert_danger afo">
-                            <label>Erro ao alterar senha.</label>
-                        </span> 
+                        <script>
+                            swal({
+                                title: "Erro!",
+                                text: "Não foi possível alterar sua senha!",
+                                icon: "error",
+                                button: "Entendi",
+                            });
+                        </script>
                     <?php endif; unset($_SESSION['senha_nao_alterada']); ?>
                     
                     <form action="../Controllers/php/alteraSenha" method="post">
