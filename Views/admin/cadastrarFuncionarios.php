@@ -74,15 +74,25 @@ if ($_SESSION['acesso'] != 'Master')
                     <h3 class="mb-1">CADASTRAR</h3>
 
                     <?php if(isset($_SESSION['usuario_existe'])): ?>
-                        <span class="alert_danger afo" role="alert">
-                            <label>Usuário já existe.</label>
-                        </span>
+                        <script>
+                            swal({
+                                title: "Erro!",
+                                text: "Usuário já existe!",
+                                icon: "error",
+                                button: "Ok",
+                            });
+                        </script>
                     <?php endif; unset($_SESSION['usuario_existe']); ?>
 
                     <?php if(isset($_SESSION['nao_cadastrado'])): ?>
-                        <span class="alert_warning afo" role="alert">
-                            <label>Erro ao cadastrar.</label>
-                        </span>
+                        <script>
+                            swal({
+                                title: "Erro!",
+                                text: "Usuário não cadastrado!",
+                                icon: "success",
+                                button: "Ok",
+                            });
+                        </script>
                     <?php endif; unset($_SESSION['nao_cadastrado']); ?>
 
                         <form class="formulario_form" action="../../Controllers/php/cadastraAdmin" method="post">
