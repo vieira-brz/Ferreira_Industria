@@ -1,6 +1,6 @@
 $('#pckey').one('keyup', ()=>
 {
-    alert('Aviso: a "Palavra-chave" será utilizada para recuperar, editar sua senha e outras informações pessoais, lembre-se de anotá-la para não se esquecer. \n\nNão são permitidos: acentos e caracteres especiais como: @ / # / $ e demais. \n\nBoa sessão!');
+    swal('Aviso: a "Palavra-chave" será utilizada para recuperar, editar sua senha e outras informações pessoais, lembre-se de anotá-la para não se esquecer. \n\nNão são permitidos: acentos e caracteres especiais como: @ - # + / % $ entre outros. \n\nBoa sessão!');
 });
 
 $('.afo').css('display', 'flex').fadeOut(4000);

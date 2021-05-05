@@ -27,6 +27,9 @@ if ($_SESSION['acesso'] != 'Master')
     <!-- CHART JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+    <!-- SWEET ALERT JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- TRENDLINE -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
@@ -66,33 +69,58 @@ if ($_SESSION['acesso'] != 'Master')
 
     <main class="content cntt">
         <?php if (isset($_SESSION['deletado'])): ?>
-            <div class="alert alert-success">
-                <label>Deletado com sucesso!</label>
-            </div>
+            <script>
+                swal({
+                    title: "Successo!",
+                    text: "Usuário excluído com sucesso!",
+                    icon: "success",
+                    button: "Ok",
+                });
+            </script>
         <?php endif; unset($_SESSION['deletado']); ?>
 
         <?php if (isset($_SESSION['alterado'])): ?>
-            <div class="alert alert-success">
-                <label>Alterado com sucesso!</label>
-            </div>
+            <script>
+                swal({
+                    title: "Sucesso!",
+                    text: "Usuário alterado com sucesso!",
+                    icon: "success",
+                    button: "Ok",
+                });
+            </script>
         <?php endif; unset($_SESSION['alterado']); ?>
 
         <?php if (isset($_SESSION['nao_deletado'])): ?>
-            <div class="alert alert-danger">
-                <label>Não deletado!</label>
-            </div>
+            <script>
+                swal({
+                    title: "Erro!",
+                    text: "Não foi possível excluir o usuário!",
+                    icon: "error",
+                    button: "Prosseguir",
+                });
+            </script>
         <?php endif; unset($_SESSION['nao_deletado']); ?>
 
         <?php if (isset($_SESSION['nao_alterado'])): ?>
-            <div class="alert alert-danger">
-                <label>Não alterado!</label>
-            </div>
+            <script>
+                swal({
+                    title: "Erro!",
+                    text: "Não foi possível alterar os dados deste usuário!",
+                    icon: "error",
+                    button: "Prosseguir",
+                });
+            </script>
         <?php endif; unset($_SESSION['nao_alterado']); ?>
 
         <?php if(isset($_SESSION['status_cadastro'])): ?>
-            <div class="alert alert-success">
-                <label>Cadastrado com sucesso.</label>
-            </div>
+            <script>
+                swal({
+                    title: "Sucesso!",
+                    text: "Usuário cadastrado com sucesso!",
+                    icon: "success",
+                    button: "Ok",
+                });
+            </script>
         <?php endif; unset($_SESSION['status_cadastro']); ?>
 
         <div class="d-flex mb-3">

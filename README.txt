@@ -4,3 +4,5 @@ e criaram uma interface visual para melhor visualização dos dados, utilizando 
 ferramentas dinâmicas para melhorar o trabalho dos funcionários.
 
 Atualmente o site se encontra em: http://medidorquimicaiot.com.br/
+
+Ignore: #--ferreira--#--pQWaXLk8--#
