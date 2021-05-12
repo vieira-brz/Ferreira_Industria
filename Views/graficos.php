@@ -38,7 +38,7 @@
 
         <section class="second_section_content mb-5" style="display:none">
             <div class="second_section_content_body">
-                <canvas id="myChart"></canvas>
+                <canvas id="myChartSelected"></canvas>
             </div>
         </section>
 

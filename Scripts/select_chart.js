@@ -85,7 +85,7 @@ $('document').ready(()=>{
 
 function grafico(periodo, energia)
 {
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChartSelected').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data:

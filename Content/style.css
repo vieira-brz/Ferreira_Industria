@@ -525,7 +525,8 @@ input:focus, textarea:focus {
 }
 
 #myChart {
-  height: 570px !important;
+  width: 70% !important;
+  height: auto !important;
 }
 
 .logMessages_subtitle {
@@ -756,6 +757,9 @@ i.fas.fa-times:hover {
   }
   .cntt {
     padding: 20px 30px;
+  }
+  canvas {
+    display: none;
   }
 }
 

@@ -24,6 +24,7 @@ $('document').ready(()=>{
                 
                 var diasSemana = [];
                 var consumoSemanaEnergia = [];
+                var hora = [];
                 var valorDoConsumo = [];
                 
                 $.each(valores, function(key, value)
@@ -37,6 +38,7 @@ $('document').ready(()=>{
                                 diasSemana.push(chaveEnergia);
                                 consumoSemanaEnergia.push(valor.ENERGIA);
                                 valorDoConsumo.push(valor.ENERGIA * 0.52);
+                                hora.push(valor.HORARIO);
                             }
                         });
                     });
@@ -47,6 +49,7 @@ $('document').ready(()=>{
 
                 somarGastos(valorDoConsumo);
                 grafico (diasSemana, consumoSemanaEnergia);
+                grafico_hora_pico (diasSemana, hora);
             }
             else
             {
@@ -96,6 +99,47 @@ var chart = new Chart(ctx, {
         legend: { "display": true, position: 'bottom', },
 
         elements: { line: { tension: 0, }, },
+    }
+});
+}
+
+function grafico_hora_pico (diasSemana, hora)
+{
+var ctx = document.getElementById('myChart2').getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'doughnut',
+    data:
+    {
+        labels: diasSemana,
+        datasets: [
+            {
+                label: 'HORÁRIO',
+                borderWidth: 2,
+                borderColor: 'rgb(0, 161, 153)',
+                backgroundColor: 'rgb(0, 161, 153, .2)',
+                data: hora,
+            },
+        ]
+    },
+
+    options:
+    {
+        responsive: true,
+
+        scales: {
+            yAxes: [{ ticks: { beginAtZero: true } }]
+        },
+
+        title:{
+            display: true,
+            text: 'HORÁRIOS DE PICO',
+            fontColor: 'rgb(46, 46, 46)',
+            fontSize: 20,
+        },
+
+        legend: { "display": true, position: 'bottom', },
+
+        // elements: { line: { tension: 0, }, },
     }
 });
 }
