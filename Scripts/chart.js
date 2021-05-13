@@ -50,6 +50,7 @@ $('document').ready(()=>{
                 somarGastos(valorDoConsumo);
                 grafico (diasSemana, consumoSemanaEnergia);
                 grafico_hora_pico (diasSemana, hora);
+                grafico_hora_pico2 (diasSemana, hora);
             }
             else
             {
@@ -77,6 +78,11 @@ var chart = new Chart(ctx, {
                 borderColor: 'rgb(0, 161, 153)',
                 backgroundColor: 'rgb(0, 161, 153, .2)',
                 data: consumoSemanaEnergia,
+                trendlineLinear: {
+                    style: "rgba(3, 90, 252)",
+                    lineStyle: "dotted|solid",
+                    width: 2
+                }
             },
         ]
     },
@@ -91,7 +97,7 @@ var chart = new Chart(ctx, {
 
         title:{
             display: true,
-            text: 'GRÁFICO DE USO DE ENERGIA',
+            text: 'USO DE ENERGIA',
             fontColor: 'rgb(46, 46, 46)',
             fontSize: 20,
         },
@@ -103,7 +109,7 @@ var chart = new Chart(ctx, {
 });
 }
 
-function grafico_hora_pico (diasSemana, hora)
+function grafico_hora_pico2 (diasSemana, hora)
 {
 var ctx = document.getElementById('myChart2').getContext('2d');
 var chart = new Chart(ctx, {
@@ -126,13 +132,54 @@ var chart = new Chart(ctx, {
     {
         responsive: true,
 
-        scales: {
-            yAxes: [{ ticks: { beginAtZero: true } }]
-        },
+        // scales: {
+        //     yAxes: [{ ticks: { beginAtZero: true } }]
+        // },
 
         title:{
             display: true,
             text: 'HORÁRIOS DE PICO',
+            fontColor: 'rgb(46, 46, 46)',
+            fontSize: 20,
+        },
+
+        legend: { "display": true, position: 'bottom', },
+
+        // elements: { line: { tension: 0, }, },
+    }
+});
+}
+
+function grafico_hora_pico (diasSemana, hora)
+{
+var ctx = document.getElementById('myChart3').getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'bar',
+    data:
+    {
+        labels: diasSemana,
+        datasets: [
+            {
+                label: 'GASTOS',
+                borderWidth: 2,
+                borderColor: 'rgb(0, 161, 153)',
+                backgroundColor: 'rgb(0, 161, 153, .2)',
+                data: hora,
+            },
+        ]
+    },
+
+    options:
+    {
+        responsive: true,
+
+        // scales: {
+        //     yAxes: [{ ticks: { beginAtZero: true } }]
+        // },
+
+        title:{
+            display: true,
+            text: 'VALORES GASTOS',
             fontColor: 'rgb(46, 46, 46)',
             fontSize: 20,
         },

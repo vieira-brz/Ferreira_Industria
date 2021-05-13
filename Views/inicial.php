@@ -19,9 +19,11 @@
         <!-- SEGUNDO PARTE DO SITE -->
         <section class="second_section_content mb-3">
             <div class="second_section_content_body">
-                <canvas id="myChart"></canvas>
-                <canvas id="myChart2"></canvas>
-                <canvas id="myChart3"></canvas>
+                <canvas class="mb-5" id="myChart"></canvas>
+                <div class="d-flex mb-5 mt-5">
+                    <canvas id="myChart2"></canvas>
+                    <canvas id="myChart3"></canvas>
+                </div>
             </div>
         </section>
         

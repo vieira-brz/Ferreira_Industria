@@ -525,7 +525,17 @@ input:focus, textarea:focus {
 }
 
 #myChart {
-  width: 70% !important;
+  width: 100% !important;
+  height: 75vh !important;
+}
+
+canvas#myChart2 {
+  width: 50% !important;
+  height: auto !important;
+}
+
+canvas#myChart3 {
+  width: 50% !important;
   height: auto !important;
 }
 
