@@ -19,4 +19,4 @@ ferramentas dinâmicas para melhorar o trabalho dos funcionários.
 </p>
 
 <h3> DOMÍNIO DO PROJETO </h3>
-<p align="justify">Atualmente o sistema se encontra em:  <a href="http://medidorquimicaiot.com.br/">http://medidorquimicaiot.com.br/ </a></p>
+<p align="justify">Atualmente o sistema se encontra em:  <a href="http://medidorquimicaiot.com.br/" target="blank">http://medidorquimicaiot.com.br/ </a></p>
