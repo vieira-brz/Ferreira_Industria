@@ -1,17 +1,27 @@
 $('document').ready(()=>{
+    
+    var soma = 0;
 
-    var totalGastos = [];
-    function somarGastos(reais)
+    function somarGastos(energia)
     {
-        var soma = 0;
-        
-        for (var i = 0; i < reais.length; i++)
-        {
-            totalGastos[i] = parseFloat(reais[i]);
-            soma += parseFloat(totalGastos[i]);    
-        }
+        var whats = energia;
 
-        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ soma +'</h3>');
+        var kwh = whats / 1000;
+        var pay = 0.52;
+        var day = 30;
+        var hour = 9;
+        var tmp = kwh * hour;
+            tmp = tmp * pay;
+        var gasto = tmp * day;
+
+        soma = soma + gasto;
+        
+        var reais = soma.toFixed(2).replace('.',',');
+        var returnFunction = soma.toFixed(0).replace('.','');
+
+        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ reais +'</h3>');
+        
+        return returnFunction;
     }
     
     function getDataDashboard() 
@@ -37,19 +47,18 @@ $('document').ready(()=>{
                             {
                                 diasSemana.push(chaveEnergia);
                                 consumoSemanaEnergia.push(valor.ENERGIA);
-                                valorDoConsumo.push(valor.ENERGIA * 0.52);
+
+                                var retorno = somarGastos(valor.ENERGIA);
+
+                                valorDoConsumo.push(retorno);
                                 hora.push(valor.HORARIO);
                             }
                         });
                     });
                 });
 
-                // var desinvertidoEnergia = consumoSemanaEnergia.reverse();
-                // var desinvertidoPeriodo = diasSemana.reverse();
-
-                somarGastos(valorDoConsumo);
                 grafico (diasSemana, consumoSemanaEnergia);
-                grafico_hora_pico (diasSemana, hora);
+                grafico_hora_pico (diasSemana, valorDoConsumo);
                 grafico_hora_pico2 (diasSemana, hora);
             }
             else
@@ -75,8 +84,8 @@ var chart = new Chart(ctx, {
             {
                 label: 'ENERGIA',
                 borderWidth: 2,
-                borderColor: 'rgb(0, 161, 153)',
-                backgroundColor: 'rgb(0, 161, 153, .2)',
+                borderColor: '#230aff',
+                backgroundColor: '#230aff20',
                 data: consumoSemanaEnergia,
                 trendlineLinear: {
                     style: "rgba(3, 90, 252)",
@@ -95,16 +104,18 @@ var chart = new Chart(ctx, {
             yAxes: [{ ticks: { beginAtZero: true } }]
         },
 
-        title:{
-            display: true,
-            text: 'USO DE ENERGIA',
-            fontColor: 'rgb(46, 46, 46)',
-            fontSize: 20,
-        },
+        // title:{
+        //     display: true,
+        //     text: 'USO DE ENERGIA',
+        //     fontColor: 'rgb(46, 46, 46)',
+        //     fontSize: 20,
+        // },
+
+        maintainAspectRatio: false,
 
         legend: { "display": true, position: 'bottom', },
 
-        elements: { line: { tension: 0, }, },
+        // elements: { line: { tension: 0, }, },
     }
 });
 }
@@ -113,7 +124,7 @@ function grafico_hora_pico2 (diasSemana, hora)
 {
 var ctx = document.getElementById('myChart2').getContext('2d');
 var chart = new Chart(ctx, {
-    type: 'doughnut',
+    type: 'line',
     data:
     {
         labels: diasSemana,
@@ -121,8 +132,8 @@ var chart = new Chart(ctx, {
             {
                 label: 'HORÁRIO',
                 borderWidth: 2,
-                borderColor: 'rgb(0, 161, 153)',
-                backgroundColor: 'rgb(0, 161, 153, .2)',
+                borderColor: '#230aff',
+                backgroundColor: '#230aff20',
                 data: hora,
             },
         ]
@@ -136,12 +147,14 @@ var chart = new Chart(ctx, {
         //     yAxes: [{ ticks: { beginAtZero: true } }]
         // },
 
-        title:{
-            display: true,
-            text: 'HORÁRIOS DE PICO',
-            fontColor: 'rgb(46, 46, 46)',
-            fontSize: 20,
-        },
+        // title:{
+        //     display: true,
+        //     text: 'HORÁRIOS DE PICO',
+        //     fontColor: 'rgb(46, 46, 46)',
+        //     fontSize: 20,
+        // },
+
+        maintainAspectRatio: false,
 
         legend: { "display": true, position: 'bottom', },
 
@@ -154,7 +167,7 @@ function grafico_hora_pico (diasSemana, hora)
 {
 var ctx = document.getElementById('myChart3').getContext('2d');
 var chart = new Chart(ctx, {
-    type: 'bar',
+    type: 'horizontalBar',
     data:
     {
         labels: diasSemana,
@@ -162,8 +175,8 @@ var chart = new Chart(ctx, {
             {
                 label: 'GASTOS',
                 borderWidth: 2,
-                borderColor: 'rgb(0, 161, 153)',
-                backgroundColor: 'rgb(0, 161, 153, .2)',
+                borderColor: '#230aff',
+                backgroundColor: '#230aff20',
                 data: hora,
             },
         ]
@@ -177,12 +190,14 @@ var chart = new Chart(ctx, {
         //     yAxes: [{ ticks: { beginAtZero: true } }]
         // },
 
-        title:{
-            display: true,
-            text: 'VALORES GASTOS',
-            fontColor: 'rgb(46, 46, 46)',
-            fontSize: 20,
-        },
+        // title:{
+        //     display: true,
+        //     text: 'GASTOS',
+        //     fontColor: 'rgb(46, 46, 46)',
+        //     fontSize: 20,
+        // },
+
+        maintainAspectRatio: false,
 
         legend: { "display": true, position: 'bottom', },
 

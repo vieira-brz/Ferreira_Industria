@@ -524,12 +524,26 @@ input:focus, textarea:focus {
   padding: 20px;
 }
 
-#myChart {
+#myChart, #myChart2, #myChart3 {
   width: 100% !important;
   height: 75vh !important;
 }
 
-canvas#myChart2 {
+.containerCanvas {
+  height: 80px;
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  background-size: 100%;
+  line-height: 80px;
+  justify-content: center;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url('assets/ferreira-gg.png');
+}
+
+/* canvas#myChart2 {
   width: 50% !important;
   height: auto !important;
 }
@@ -537,7 +551,7 @@ canvas#myChart2 {
 canvas#myChart3 {
   width: 50% !important;
   height: auto !important;
-}
+} */
 
 .logMessages_subtitle {
   color: var(--cor-text);

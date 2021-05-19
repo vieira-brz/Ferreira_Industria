@@ -1,17 +1,27 @@
 $('document').ready(()=>{
+    
+    var soma = 0;
 
-    var totalGastos = [];
-    function somarGastos(reais)
+    function somarGastos(energia)
     {
-        var soma = 0;
-        
-        for (var i = 0; i < reais.length; i++)
-        {
-            totalGastos[i] = parseFloat(reais[i]);
-            soma += parseFloat(totalGastos[i]);    
-        }
+        var whats = energia;
 
-        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ soma +'</h3>');
+        var kwh = whats / 1000;
+        var pay = 0.52;
+        var day = 30;
+        var hour = 9;
+        var tmp = kwh * hour;
+            tmp = tmp * pay;
+        var gasto = tmp * day;
+
+        soma = soma + gasto;
+        
+        var reais = soma.toFixed(2).replace('.',',');
+        var returnFunction = soma.toFixed(0).replace('.','');
+
+        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ reais +'</h3>');
+        
+        return returnFunction;
     }
     
     $('.btn-primary').click((e)=>
@@ -50,7 +60,10 @@ $('document').ready(()=>{
                             {
                                 periodo.push(idx);
                                 energia.push(key.ENERGIA);
-                                valorDoConsumo.push(key.ENERGIA * 0.52);
+                                
+                                var retorno = somarGastos(key.ENERGIA);
+
+                                valorDoConsumo.push(retorno);
                             });
                         });
                     });
@@ -95,8 +108,8 @@ var chart = new Chart(ctx, {
             {
                 label: 'ENERGIA',
                 borderWidth: 2,
-                borderColor: 'rgb(0, 161, 153)',
-                backgroundColor: 'rgb(0, 161, 153, .2)',
+                borderColor: '#230aff',
+                backgroundColor: '#230aff20',
                 data: energia,
             },
         ]
