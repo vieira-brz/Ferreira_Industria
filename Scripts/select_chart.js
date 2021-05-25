@@ -1,8 +1,16 @@
 $('document').ready(()=>{
-    
+       
     var soma = 0;
+    var total = 0;
 
-    function somarGastos(energia)
+    function somarGastos(soma)
+    {
+        total += soma;
+        var res = total.toFixed(2).replace('.',',');
+        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ res +'</h3>');
+    }
+
+    function calcularValorConsumo(energia)
     {
         var whats = energia;
 
@@ -16,11 +24,8 @@ $('document').ready(()=>{
 
         soma = soma + gasto;
         
-        var reais = soma.toFixed(2).replace('.',',');
         var returnFunction = soma.toFixed(0).replace('.','');
-
-        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ reais +'</h3>');
-        
+        somarGastos(soma);
         return returnFunction;
     }
     
@@ -60,8 +65,8 @@ $('document').ready(()=>{
                             {
                                 periodo.push(idx);
                                 energia.push(key.ENERGIA);
-                                
-                                var retorno = somarGastos(key.ENERGIA);
+
+                                var retorno = calcularValorConsumo(key.ENERGIA);
 
                                 valorDoConsumo.push(retorno);
                             });

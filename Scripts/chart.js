@@ -1,8 +1,16 @@
 $('document').ready(()=>{
     
     var soma = 0;
+    var total = 0;
 
-    function somarGastos(energia)
+    function somarGastos(soma)
+    {
+        total += soma;
+        var res = total.toFixed(2).replace('.',',');
+        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ res +'</h3>');
+    }
+    
+    function calcularValorConsumo(energia)
     {
         var whats = energia;
 
@@ -16,16 +24,17 @@ $('document').ready(()=>{
 
         soma = soma + gasto;
         
-        var reais = soma.toFixed(2).replace('.',',');
         var returnFunction = soma.toFixed(0).replace('.','');
-
-        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ reais +'</h3>');
         
+        somarGastos(soma);
         return returnFunction;
     }
     
     function getDataDashboard() 
     {
+        soma = 0;
+        total = 0;
+
         $.get("../Controllers/php/dashboard.php", function(dados, status) 
         { 
             if (status == 'success')
@@ -48,8 +57,8 @@ $('document').ready(()=>{
                                 diasSemana.push(chaveEnergia);
                                 consumoSemanaEnergia.push(valor.ENERGIA);
 
-                                var retorno = somarGastos(valor.ENERGIA);
-
+                                var retorno = calcularValorConsumo(valor.ENERGIA);
+                                
                                 valorDoConsumo.push(retorno);
                                 hora.push(valor.HORARIO);
                             }
@@ -167,7 +176,7 @@ function grafico_hora_pico (diasSemana, hora)
 {
 var ctx = document.getElementById('myChart3').getContext('2d');
 var chart = new Chart(ctx, {
-    type: 'horizontalBar',
+    type: 'bar',
     data:
     {
         labels: diasSemana,
