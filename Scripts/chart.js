@@ -72,7 +72,7 @@ $('document').ready(()=>{
             }
             else
             {
-                alert('Erro na base de dados, chame o suporte! \nOrigem do erro: gráfico de energia.');
+                swal('Erro na base de dados, chame o suporte! \n\nOrigem do erro: gráfico de energia.');
             }
         });
     }
