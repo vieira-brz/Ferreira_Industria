@@ -6,7 +6,7 @@ $('document').ready(()=>{
     function somarGastos(soma)
     {
         total += soma;
-        var res = total.toFixed(2).replace('.',',');
+        // var res = total.toFixed(2).replace('.',',');
         $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ res +'</h3>');
     }
 
@@ -85,7 +85,7 @@ $('document').ready(()=>{
                 }
                 else
                 {
-                    alert('Erro na base de dados, chame o suporte! \nOrigem do erro: gráfico de energia.');
+                    swal('Erro na base de dados, chame o suporte! \n\nOrigem do erro: gráfico de energia.');
                 }
             });
         }, 5000);
