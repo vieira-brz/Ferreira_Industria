@@ -18,20 +18,18 @@ class Grafico
         
         foreach ($dados as $key => $value)
         {
-            $this->antigo = date('H', strtotime($value[$key - 1]['data']));
-            $this->novo = date('H', strtotime($value['data']));
-
             if (strtotime(date('d-m-Y', strtotime($value['data']))) >= strtotime($semana))
             {
+                $this->antigo = date('H', strtotime($value[$key - 1]['data']));
+                $this->novo = date('H', strtotime($value['data']));
+
                 if ($this->antigo > $this->novo)
                 {
-                    var_dump($this->antigo);
                     $retorno['semanal'][strtoupper(utf8_encode(strftime('%a', strtotime($value['data']))))]
                     ['HORARIO'] = $this->antigo;
                 }
                 else
                 {
-                    var_dump($this->novo);
                     $retorno['semanal'][strtoupper(utf8_encode(strftime('%a', strtotime($value['data']))))]
                     ['HORARIO'] = $this->novo;
                 }
