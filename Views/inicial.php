@@ -18,13 +18,22 @@
 
         <!-- SEGUNDO PARTE DO SITE -->
         <div class="containerCanvas">
-            <p>USOS DE ENERGIA</p>
+            <p>POTÊNCIA ATUAL</p>
         </div>
         <section class="second_section_content mb-3">
             <div class="second_section_content_body">
                 <canvas class="mb-3" id="myChart"></canvas>
             </div>
         </section>
+<!-- 
+        <div class="containerCanvas">
+            <p>USOS DE ENERGIA</p>
+        </div>
+        <section class="second_section_content mb-3">
+            <div class="second_section_content_body">
+                <canvas class="mb-3" id="myChart"></canvas>
+            </div>
+        </section> -->
 
         <div class="containerCanvas">
             <p>HORÁRIOS DE PICO</p>
