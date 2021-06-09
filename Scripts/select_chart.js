@@ -12,21 +12,33 @@ $('document').ready(()=>{
 
     function calcularValorConsumo(energia)
     {
-        var whats = energia;
-
-        var kwh = whats / 1000;
-        var pay = 0.52;
-        var day = 30;
-        var hour = 9;
-        var tmp = kwh * hour;
-            tmp = tmp * pay;
-        var gasto = tmp * day;
-
-        soma = soma + gasto;
+        var valor = 0.00011;
         
-        var returnFunction = soma.toFixed(0).replace('.','');
-        somarGastos(soma);
-        return returnFunction;
+        var x = 0;
+        var y = 0;
+
+        x = ((( energia ) / 1000) * valor);
+
+        y = y + x;
+
+        somarGastos(y);
+        return y;
+
+        // var whats = energia;
+
+        // var kwh = whats / 1000;
+        // var pay = 0.52;
+        // var day = 30;
+        // var hour = 9;
+        // var tmp = kwh * hour;
+        //     tmp = tmp * pay;
+        // var gasto = tmp * day;
+
+        // soma = soma + gasto;
+        
+        // var returnFunction = soma.toFixed(0).replace('.','');
+        // somarGastos(soma);
+        // return returnFunction;
     }
     
     $('.btn-primary').click((e)=>
@@ -36,6 +48,7 @@ $('document').ready(()=>{
 
         $('.carregamento').css('display', 'block');
         $('.content').css('display','none');
+        $('canvas').css('display','flex');
 
         setTimeout(() => 
         {
@@ -76,7 +89,7 @@ $('document').ready(()=>{
                     // var desinvertidoEnergia = energia.reverse();
                     // var desinvertidoPeriodo = periodo.reverse();
     
-                    somarGastos(valorDoConsumo);
+                    // somarGastos(valorDoConsumo);
     
                     $('.carregamento').css('display', 'none');
                     $('.content').css('display','block');
@@ -98,6 +111,13 @@ $('document').ready(()=>{
         e.stopImmediatePropagation();
 
         $('input').val('');
+        
+        periodo = [];
+        valorDoConsumo = [];
+        energia = [];
+
+        $('canvas').css('display','none');
+        $('.mostraGastos').css('display','none');
     });
 });
 

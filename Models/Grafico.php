@@ -30,7 +30,7 @@ class Grafico
 
     public function dataSelecionada($datai, $dataf, $retorno, $db, $tabelanode)
     {
-        $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE data BETWEEN '".$datai."' and '".$dataf."' ORDER BY data";
+        $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE data BETWEEN ('".$datai."' - INTERVAL 1 DAY) and ('".$dataf."' + INTERVAL 1 DAY) ORDER BY data";
         $dados = $this->con->readQuery($query); 
 
         foreach ($dados as $key) 

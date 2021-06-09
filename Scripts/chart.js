@@ -12,22 +12,33 @@ $('document').ready(()=>{
     
     function calcularValorConsumo(energia)
     {
-        var whats = energia;
-
-        var kwh = whats / 1000;
-        var pay = 0.52;
-        var day = 30;
-        var hour = 9;
-        var tmp = kwh * hour;
-            tmp = tmp * pay;
-        var gasto = tmp * day;
-
-        soma = soma + gasto;
+        var valor = 0.00011;
         
-        var returnFunction = soma.toFixed(0).replace('.','');
+        var x = 0;
+        var y = 0;
+
+        x = ((( energia ) / 1000) * valor);
+
+        y = y + x;
+
+        somarGastos(y);
+        return y;
+
+        // var wats = energia;
+
+        // var kwh = wats / 1000;
+        // var pay = 0.52;
+        // var day = 30;
+        // var hour = 9;
+        // var tmp = kwh * hour;
+        //     tmp = tmp * pay;
+        // var gasto = tmp * day;
+
+        // soma = soma + gasto;
         
-        somarGastos(soma);
-        return returnFunction;
+        // var returnFunction = soma.toFixed(0).replace('.','');
+        
+        // return returnFunction;
     }
     
     function getDataDashboard() 
@@ -78,7 +89,7 @@ $('document').ready(()=>{
     }
     
     getDataDashboard();
-    setInterval(() => {getDataDashboard();}, 30000);
+    setInterval(() => {getDataDashboard();}, 5000);
 });
 
 function grafico (diasSemana, consumoSemanaEnergia)
