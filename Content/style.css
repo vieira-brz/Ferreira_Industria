@@ -782,9 +782,6 @@ i.fas.fa-times:hover {
   .cntt {
     padding: 20px 30px;
   }
-  canvas {
-    display: none;
-  }
 }
 
 @media (max-width: 660px)
