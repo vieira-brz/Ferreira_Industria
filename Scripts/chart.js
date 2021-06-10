@@ -6,7 +6,7 @@ $('document').ready(()=>{
     function somarGastos(soma)
     {
         total += soma;
-        var res = total.toFixed(2).replace('.',',');
+        var res = total.toFixed(6).replace('.',',');
         $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ res +'</h3>');
     }
     
@@ -23,22 +23,6 @@ $('document').ready(()=>{
 
         somarGastos(y);
         return y;
-
-        // var wats = energia;
-
-        // var kwh = wats / 1000;
-        // var pay = 0.52;
-        // var day = 30;
-        // var hour = 9;
-        // var tmp = kwh * hour;
-        //     tmp = tmp * pay;
-        // var gasto = tmp * day;
-
-        // soma = soma + gasto;
-        
-        // var returnFunction = soma.toFixed(0).replace('.','');
-        
-        // return returnFunction;
     }
     
     function getDataDashboard() 
@@ -135,7 +119,7 @@ var chart = new Chart(ctx, {
 
         legend: { "display": true, position: 'bottom', },
 
-        // elements: { line: { tension: 0, }, },
+        elements: { line: { tension: 0, }, },
     }
 });
 }
@@ -178,7 +162,7 @@ var chart = new Chart(ctx, {
 
         legend: { "display": true, position: 'bottom', },
 
-        // elements: { line: { tension: 0, }, },
+        elements: { line: { tension: 0, }, },
     }
 });
 }

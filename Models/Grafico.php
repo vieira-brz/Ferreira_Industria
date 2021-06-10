@@ -9,6 +9,22 @@ class Grafico
         $this->con = $conMysql;
     }
 
+
+    public function buscaDadosHoje($db, $tabelanode)
+    {
+        $query = "SELECT * FROM ".$db.".".$tabelanode." ORDER BY `data` desc LIMIT 3";
+        $dados = $this->con->readQuery($query);   
+
+        foreach ($dados as $key)
+        {
+            $retorno['HORARIO'][] = date('H:i:s d/m', strtotime(max($key)));
+            
+            $retorno['ENERGIA'][] = $key['dado'];
+        }
+
+        return $retorno;
+    }
+
     public function buscaDados($semana, $retorno, $db, $tabelanode)
     {
         $query = "SELECT * FROM ".$db.".".$tabelanode." ORDER BY data";

@@ -17,26 +17,29 @@
 -->
 
         <!-- SEGUNDO PARTE DO SITE -->
-        <div class="containerCanvas">
-            <p>POTÊNCIA ATUAL</p>
+        <div class="containerCanvas mb-4">
+            <p>POTÊNCIAS E GASTOS ATUAIS</p>
+        </div>
+        <section class="second_section_content mb-3 d-flex justify-content-between" style="max-height: 500px; width: 100%;">
+            <div class="second_section_content_body" style="width: 50%;">
+                <canvas class="mb-3" id="dayChart"></canvas>
+            </div>
+            <div class="second_section_content_body" style="width: 50%;">
+                <canvas class="mb-3" id="chartGasto"></canvas>
+            </div>
+        </section>
+
+        <div class="containerCanvas mb-4 mt-5">
+            <p>USOS DE ENERGIA SEMANAL</p>
         </div>
         <section class="second_section_content mb-3">
             <div class="second_section_content_body">
                 <canvas class="mb-3" id="myChart"></canvas>
             </div>
         </section>
-<!-- 
-        <div class="containerCanvas">
-            <p>USOS DE ENERGIA</p>
-        </div>
-        <section class="second_section_content mb-3">
-            <div class="second_section_content_body">
-                <canvas class="mb-3" id="myChart"></canvas>
-            </div>
-        </section> -->
 
-        <div class="containerCanvas">
-            <p>HORÁRIOS DE PICO</p>
+        <div class="containerCanvas mb-4 mt-5">
+            <p>HORÁRIOS DE PICO SEMANAL</p>
         </div>
         <section class="second_section_content mb-3">
             <div class="second_section_content_body">
@@ -44,8 +47,8 @@
             </div>
         </section>
         
-        <div class="containerCanvas">
-            <p>GASTOS</p>
+        <div class="containerCanvas mb-4 mt-5">
+            <p>GASTO SEMANAL</p>
         </div>
         <section class="second_section_content mb-3">
             <div class="second_section_content_body">
@@ -58,5 +61,6 @@
     </main>
 
     <script src="../Scripts/chart.js"></script>
+    <script src="../Scripts/chartDiario.js"></script>
     
 <?php include_once 'layout/footer.php'; ?>

@@ -776,11 +776,22 @@ i.fas.fa-times:hover {
 /* RESPONSIVE PARA MOBILES */
 @media (max-width: 500px) 
 {
-  .second_section_content {
-    display: none;
-  }
   .cntt {
     padding: 20px 30px;
+  }
+
+  canvas {
+    min-width: 100%;
+    max-height: 200px;
+  }
+  
+  .second_section_content {
+    max-height: 500px;
+    flex-direction: column;
+  }
+
+  .second_section_content_body {
+    min-width: 100%;
   }
 }
 
@@ -872,10 +883,6 @@ i.fas.fa-times:hover {
     font-size: 12px;
   }
 
-  #myChart {
-    height: auto !important;
-  }
-  
   .input-fixed {
     width: 100% !important;
   }

@@ -6,7 +6,7 @@ $('document').ready(()=>{
     function somarGastos(soma)
     {
         total += soma;
-        // var res = total.toFixed(2).replace('.',',');
+        var res = total.toFixed(6).replace('.',',');
         $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ res +'</h3>');
     }
 
@@ -23,22 +23,6 @@ $('document').ready(()=>{
 
         somarGastos(y);
         return y;
-
-        // var whats = energia;
-
-        // var kwh = whats / 1000;
-        // var pay = 0.52;
-        // var day = 30;
-        // var hour = 9;
-        // var tmp = kwh * hour;
-        //     tmp = tmp * pay;
-        // var gasto = tmp * day;
-
-        // soma = soma + gasto;
-        
-        // var returnFunction = soma.toFixed(0).replace('.','');
-        // somarGastos(soma);
-        // return returnFunction;
     }
     
     $('.btn-primary').click((e)=>
@@ -48,7 +32,6 @@ $('document').ready(()=>{
 
         $('.carregamento').css('display', 'block');
         $('.content').css('display','none');
-        $('canvas').css('display','flex');
 
         setTimeout(() => 
         {
@@ -116,7 +99,7 @@ $('document').ready(()=>{
         valorDoConsumo = [];
         energia = [];
 
-        $('canvas').css('display','none');
+        $('.second_section_content').css('display','none');
         $('.mostraGastos').css('display','none');
     });
 });

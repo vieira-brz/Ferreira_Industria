@@ -10,11 +10,9 @@ $graf = new Grafico($con);
 date_default_timezone_set('America/Sao_Paulo');
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 
-$semana = date("d/m/Y", strtotime("- 7 days"));
-
 $retorno = array();
 
-$dataBox[] = $graf->buscaDados($semana, $retorno, $db, $tabelanode);
+$dataBox[] = $graf->buscaDadosHoje($db, $tabelanode);
 
 echo json_encode($dataBox);
 ?>
