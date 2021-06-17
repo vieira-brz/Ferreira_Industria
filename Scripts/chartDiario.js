@@ -3,13 +3,6 @@ $('document').ready(()=>
     var soma = 0;
     var total = 0;
 
-    function somarGastos(soma)
-    {
-        total += soma;
-        var res = total.toFixed(6).replace('.',',');
-        $('.mostraGastos').html('<h3 style="font-weight:bold;"> Gastos totais: R$ '+ res +'</h3>');
-    }
-    
     function calcularValorConsumo(energia)
     {
         var valor = 0.00011;
@@ -20,8 +13,7 @@ $('document').ready(()=>
         x = ((( energia ) / 1000) * valor);
 
         y = y + x;
-
-        somarGastos(y);
+        
         return y;
     }
 
@@ -31,10 +23,12 @@ $('document').ready(()=>
         total = 0;
         
         var hora = [];
+        var horaDonut = [];
         var energia = [];
         var consumoDia = [];
+        var consumoDiaDonut = [];
 
-        $.get("../Controllers/php/diario.php", function(dados, status) 
+        $.get("../Controllers/php/diario", function(dados, status) 
         { 
             if (status == 'success')
             {
@@ -43,6 +37,14 @@ $('document').ready(()=>
 
                 var h = data.HORARIO;
                 var e = data.ENERGIA;
+                
+                horaDonut.push(h[h.length - 1]);
+                
+                var cnsDiaDonut = calcularValorConsumo(e[e.length - 1]);
+                consumoDiaDonut.push(cnsDiaDonut);
+                
+                $('.inputGrafico').attr('value','Gasto atual de '+ cnsDiaDonut +' reais');
+                $('.inputGrafico2').attr('value','Potência atual de '+ (e[e.length - 1] / 1000) +' kilowatts');
 
                 $.each(h, function(i,k)
                 {
@@ -58,7 +60,8 @@ $('document').ready(()=>
                 });
                 
                 grafDay(hora, energia);
-                grafDayCust(hora, consumoDia);
+                console.log(consumoDiaDonut, horaDonut);
+                grafDayCust(horaDonut, consumoDiaDonut);
             }
             else
             {
@@ -75,7 +78,7 @@ function grafDay (hora, energia)
 {
 var ctx = document.getElementById('dayChart').getContext('2d');
 var chart = new Chart(ctx, {
-    type: 'horizontalBar',
+    type: 'line',
     data:
     {
         labels: hora,
@@ -182,6 +185,15 @@ var chart = new Chart(ctx, {
 
     options:
     {
+        maintainAspectRatio: false,
+        circumference: Math.PI + 1,
+        rotation: -Math.PI - 0.5,
+        cutoutPercentage: 64,
+    
+        onClick(...args) {
+          console.log(args);
+        },
+    
         responsive: true,
 
         maintainAspectRatio: false,

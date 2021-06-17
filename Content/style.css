@@ -13,7 +13,7 @@
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
-  
+  c
   /* Sections
      ========================================================================== */
   
@@ -541,6 +541,11 @@ input:focus, textarea:focus {
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
   background-image: url('assets/ferreira-gg.png');
+}
+
+.inputGrafico {
+    width: 100% !important;
+    background-color: transparent !important;
 }
 
 /* canvas#myChart2 {

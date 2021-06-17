@@ -18,13 +18,22 @@
 
         <!-- SEGUNDO PARTE DO SITE -->
         <div class="containerCanvas mb-4">
-            <p>POTÊNCIAS E GASTOS ATUAIS</p>
+            <p>POTÊNCIA DIÁRIA</p>
         </div>
-        <section class="second_section_content mb-3 d-flex justify-content-between" style="max-height: 500px; width: 100%;">
-            <div class="second_section_content_body" style="width: 50%;">
+        <section class="second_section_content mb-3" style="height: 65vh; width: 100%;">
+            <div class="second_section_content_body" style="width: 100%; height: 100%;">
                 <canvas class="mb-3" id="dayChart"></canvas>
             </div>
-            <div class="second_section_content_body" style="width: 50%;">
+        </section>
+
+        <!-- SEGUNDO PARTE DO SITE -->
+        <div class="containerCanvas mb-4 mt-5">
+            <p>GASTO ATUAL</p>
+        </div>
+        <section class="second_section_content mb-3">
+            <input value="Carregando potência atual..." class="inputGrafico inputGrafico2" readonly disabled>
+            <input value="Carregando gasto atual..." class="inputGrafico" readonly disabled>
+            <div class="second_section_content_body" style="width: 100%; height: 400px;">
                 <canvas class="mb-3" id="chartGasto"></canvas>
             </div>
         </section>
@@ -38,14 +47,14 @@
             </div>
         </section>
 
-        <div class="containerCanvas mb-4 mt-5">
-            <p>HORÁRIOS DE PICO SEMANAL</p>
-        </div>
-        <section class="second_section_content mb-3">
-            <div class="second_section_content_body">
-                <canvas class="mb-3" id="myChart2"></canvas>
-            </div>
-        </section>
+        <!--<div class="containerCanvas mb-4 mt-5">-->
+        <!--    <p>HORÁRIOS DE PICO SEMANAL</p>-->
+        <!--</div>-->
+        <!--<section class="second_section_content mb-3">-->
+        <!--    <div class="second_section_content_body">-->
+        <!--        <canvas class="mb-3" id="myChart2"></canvas>-->
+        <!--    </div>-->
+        <!--</section>-->
         
         <div class="containerCanvas mb-4 mt-5">
             <p>GASTO SEMANAL</p>
