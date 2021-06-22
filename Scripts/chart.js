@@ -63,7 +63,7 @@ $('document').ready(()=>{
 
                 grafico (diasSemana, consumoSemanaEnergia);
                 grafico_hora_pico (diasSemana, valorDoConsumo);
-                grafico_hora_pico2 (diasSemana, hora);
+                /* grafico_hora_pico2 (diasSemana, hora); */
             }
             else
             {
@@ -73,7 +73,7 @@ $('document').ready(()=>{
     }
     
     getDataDashboard();
-    setInterval(() => {getDataDashboard();}, 5000);
+    setInterval(() => {getDataDashboard();}, 10000);
 });
 
 function grafico (diasSemana, consumoSemanaEnergia)
@@ -124,6 +124,7 @@ var chart = new Chart(ctx, {
 });
 }
 
+/*
 function grafico_hora_pico2 (diasSemana, hora)
 {
 var ctx = document.getElementById('myChart2').getContext('2d');
@@ -166,6 +167,7 @@ var chart = new Chart(ctx, {
     }
 });
 }
+*/
 
 function grafico_hora_pico (diasSemana, hora)
 {

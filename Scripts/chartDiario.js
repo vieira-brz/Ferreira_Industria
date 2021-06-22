@@ -39,9 +39,15 @@ $('document').ready(()=>
                 var e = data.ENERGIA;
                 
                 horaDonut.push(h[h.length - 1]);
+                horaDonut.push('Potência Livre');
                 
                 var cnsDiaDonut = calcularValorConsumo(e[e.length - 1]);
-                consumoDiaDonut.push(cnsDiaDonut);
+                var potDiaDonut = e[e.length - 1] / 1000;
+                
+                let valorCns = 1.000 - cnsDiaDonut;
+                
+                consumoDiaDonut.push(potDiaDonut);
+                consumoDiaDonut.push(valorCns);
                 
                 $('.inputGrafico').attr('value','Gasto atual de '+ cnsDiaDonut +' reais');
                 $('.inputGrafico2').attr('value','Potência atual de '+ (e[e.length - 1] / 1000) +' kilowatts');
@@ -126,6 +132,8 @@ var chart = new Chart(ctx, {
     {
         responsive: true,
 
+        animation: false,
+
         maintainAspectRatio: false,
 
         legend: { "display": true, position: 'bottom', },
@@ -147,8 +155,8 @@ var chart = new Chart(ctx, {
             {
                 label: 'CONSUMO',
                 borderWidth: 2,
-                borderColor: '#230aff',
-                backgroundColor: '#230aff20',
+                borderColor: ['#230aff','#555'],
+                backgroundColor: ['#230aff20','#55555550'],
                 data: custo,
                 trendlineLinear: {
                     style: "rgba(3, 90, 252)",
@@ -193,6 +201,8 @@ var chart = new Chart(ctx, {
         onClick(...args) {
           console.log(args);
         },
+        
+        // animation: false,
     
         responsive: true,
 

@@ -12,7 +12,7 @@ class Grafico
 
     public function buscaDadosHoje($db, $tabelanode)
     {
-        $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE `data` > now() - INTERVAL 1 DAY ORDER BY `data`";
+        $query = "SELECT * FROM ".$db.".".$tabelanode." WHERE `data` > now() - INTERVAL 9 HOUR ORDER BY `data`";
         $dados = $this->con->readQuery($query);   
 
         foreach ($dados as $key)

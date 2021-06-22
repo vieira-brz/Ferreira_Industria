@@ -56,7 +56,7 @@ $('i#nome').click((e)=>
                     icon: "error",
                     button: "Entendi",
                 });
-                location.reload();
+                setTimeout(function(){location.reload();},5000);
             }
             else
             {
@@ -66,7 +66,7 @@ $('i#nome').click((e)=>
                     icon: "error",
                     button: "Entendi",
                 });
-                location.reload();
+                setTimeout(function(){location.reload();},5000);
             }
         });
     });
@@ -112,7 +112,7 @@ $('i#email').click((e)=>
                     icon: "error",
                     button: "Entendi",
                 });
-                location.reload();
+                setTimeout(function(){location.reload();},5000);
             }
             else if (data == 3)
             {
@@ -122,7 +122,7 @@ $('i#email').click((e)=>
                     icon: "warning",
                     button: "Entendi",
                 });
-                location.reload();
+                setTimeout(function(){location.reload();},5000);
             }
             else
             {
@@ -132,7 +132,7 @@ $('i#email').click((e)=>
                     icon: "error",
                     button: "Entendi",
                 });
-                location.reload();
+                setTimeout(function(){location.reload();},5000);
             }
         });
     });
@@ -176,7 +176,7 @@ $('i#senha').click((e)=>
                             icon: "success",
                             button: "Prosseguir",
                         });
-                        location.reload();
+                        setTimeout(function(){location.reload();},5000);
                     }
                     else if (data == -1)
                     {
@@ -186,7 +186,7 @@ $('i#senha').click((e)=>
                             icon: "error",
                             button: "Entendi",
                         });
-                        location.reload();
+                        setTimeout(function(){location.reload();},5000);
                     }
                     else
                     {
@@ -196,7 +196,7 @@ $('i#senha').click((e)=>
                             icon: "error",
                             button: "Entendi",
                         });
-                        location.reload();
+                        setTimeout(function(){location.reload();},5000);
                     }
                 });
             });
